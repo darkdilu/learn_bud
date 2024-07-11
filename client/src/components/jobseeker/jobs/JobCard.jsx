@@ -14,6 +14,7 @@ export default function JobCard({
   skills,
   created,
   id,
+  jobPlace,
 }) {
   return (
     <div className="flex md:flex-row flex-col gap-3 md:justify-between items-center md:px-10 p-3 border border-primary shadow-md rounded-xl">
@@ -24,6 +25,7 @@ export default function JobCard({
         <div className="flex flex-col gap-4">
           <h1 className="text-xl font-medium">{name}</h1>
           <h1 className="text-sm font-medium">{company}</h1>
+          <h1 className="text-sm font-medium">{jobPlace}</h1>
           <div className="flex flex-col md:flex-row gap-5 text-sm">
             <p className="text-hover">{category}</p>
             <p className="flex gap-2 items-center text-gray-500">

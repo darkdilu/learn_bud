@@ -46,7 +46,8 @@ export default function JSSingleJobHeader({ data, refetchData }) {
                 <SlLocationPin />
               </span>
               {data.jobLocation}
-              {""}
+              {", "}
+              {data.jobPlace}
             </p>
             <p className="flex gap-2 items-center text-gray-500">
               <span>

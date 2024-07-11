@@ -19,7 +19,8 @@ export default function SinglePageHeader({ data }) {
                 <SlLocationPin />
               </span>
               {data.jobLocation}
-              {""}
+              {", "}
+              {data.jobPlace}
             </p>
             <p className="flex gap-2 items-center text-gray-500">
               <span>

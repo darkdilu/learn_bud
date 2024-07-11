@@ -7,6 +7,10 @@ const JobSchema = new Schema(
       required: true,
       ref: "Employer",
     },
+    userOwner: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
     jobTitle: {
       type: String,
       required: true,
@@ -93,6 +97,9 @@ const JobSchema = new Schema(
       type: [mongoose.Types.ObjectId],
       ref: "JobSeeker",
       default: [],
+    },
+    jobPlace: {
+      type: String,
     },
   },
   {

@@ -9,7 +9,7 @@ const initialState = {
   jobSearchExperience: "ALL",
   jobSearchQualification: "ALL",
   jobSearchMinSalary: "ALL",
-  jobSearchSort: "",
+  jobSearchSort: "Newest",
   jobSearchCurrentPage: 1,
   jobSearchTotalPage: 1,
   jobSearchOn: false,
@@ -67,7 +67,7 @@ const jobSearchSlice = createSlice({
       state.jobSearchExperience = "ALL";
       state.jobSearchQualification = "ALL";
       state.jobSearchMinSalary = "ALL";
-      state.jobSearchSort = "";
+      state.jobSearchSort = "Newest";
       state.jobSearchCurrentPage = 1;
       state.jobSearchTotalPage = 1;
       state.jobSearchOn = false;

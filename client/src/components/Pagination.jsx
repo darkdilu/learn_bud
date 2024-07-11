@@ -1,16 +1,51 @@
 import React from "react";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { setJobsearchCurrentPage } from "../slices/JobportalSearches/jobSearchSlice";
+import { setCompanySearchCurrentPage } from "../slices/JobportalSearches/companySearchSlice";
 
-export default function Pagination() {
+export default function Pagination({
+  currentPage,
+  totalPage,
+  refetch,
+  jobsearch,
+  companysearch,
+}) {
+  const dispatch = useDispatch();
+
+  function prev() {
+    if (currentPage === 1) return;
+    if (jobsearch) dispatch(setJobsearchCurrentPage(currentPage - 1));
+    if (companysearch) dispatch(setCompanySearchCurrentPage(currentPage - 1));
+    refetch();
+  }
+
+  function next() {
+    if (currentPage === totalPage) return;
+    if (jobsearch) dispatch(setJobsearchCurrentPage(currentPage + 1));
+    if (companysearch) dispatch(setCompanySearchCurrentPage(currentPage + 1));
+    refetch();
+  }
+
   return (
     <div className="flex items-center gap-4">
-      <div className="text-3xl text-ascent rounded-full cursor-pointer hover:bg-hover hover:text-secondary">
+      <button
+        className="text-3xl text-ascent rounded-full cursor-pointer hover:bg-hover hover:text-secondary"
+        onClick={prev}
+        disabled={currentPage === 1}
+      >
         <FiArrowLeftCircle />
-      </div>
-      <h1>Page 1 of 3</h1>
-      <div className="text-3xl text-ascent rounded-full cursor-pointer hover:bg-hover hover:text-secondary">
+      </button>
+      <h1>
+        Page {currentPage} of {totalPage}
+      </h1>
+      <button
+        className="text-3xl text-ascent rounded-full cursor-pointer hover:bg-hover hover:text-secondary"
+        onClick={next}
+        disabled={currentPage === totalPage}
+      >
         <FiArrowRightCircle />
-      </div>
+      </button>
     </div>
   );
 }

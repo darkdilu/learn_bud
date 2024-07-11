@@ -49,7 +49,9 @@ export const addNewJob = async (req, res) => {
     experience: req.body.experience,
     gender: req.body.gender,
     owner: req.user.employerId,
+    jobPlace: req.body.jobPlace,
     skills: skillsArray,
+    userOwner: req.user.userId,
   });
   await newJob.save();
   res.status(201).json({ msg: "Job added successfully" });
@@ -81,6 +83,7 @@ export const editJob = async (req, res) => {
   job.qualification = req.body.qualification;
   job.experience = req.body.experience;
   job.gender = req.body.gender;
+  job.jobPlace = req.body.jobPlace;
   job.owner = req.user.employerId;
   job.skills = skillsArray;
   await job.save();

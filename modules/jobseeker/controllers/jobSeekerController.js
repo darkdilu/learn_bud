@@ -36,12 +36,59 @@ export const saveData = async (req, res) => {
 };
 
 export const getAllJobs = async (req, res) => {
-  const jobs = (await Job.find().populate("owner")).reverse();
+  const {
+    jobSearchKeyword,
+    jobSearchLocation,
+    jobSearchCategory,
+    jobSearchGender,
+    jobSearchJobType,
+    jobSearchExperience,
+    jobSearchQualification,
+    jobSearchSort,
+    jobSearchCurrentPage,
+  } = req.query;
+  const queryObject = {
+    userOwner: { $ne: req.user.userId },
+  };
+  if (jobSearchKeyword && jobSearchKeyword !== "") {
+    queryObject.jobTitle = { $regex: jobSearchKeyword, $options: "i" };
+  }
+  if (jobSearchLocation && jobSearchLocation !== "") {
+    queryObject.jobPlace = { $regex: jobSearchLocation, $options: "i" };
+  }
+  if (jobSearchCategory && jobSearchCategory !== "ALL") {
+    queryObject.category = jobSearchCategory;
+  }
+  if (jobSearchGender && jobSearchGender !== "ALL") {
+    queryObject.gender = jobSearchGender;
+  }
+  if (jobSearchJobType && jobSearchJobType !== "ALL") {
+    queryObject.jobType = jobSearchJobType;
+  }
+  if (jobSearchExperience && jobSearchExperience !== "ALL") {
+    queryObject.experience = jobSearchExperience;
+  }
+  if (jobSearchQualification && jobSearchQualification !== "ALL") {
+    queryObject.qualification = jobSearchQualification;
+  }
+  const sortOptions = {
+    Newest: "-createdAt",
+    Oldest: "createdAt",
+  };
+  const sortKey = sortOptions[jobSearchSort] || sortOptions.Newest;
+  const page = Number(jobSearchCurrentPage) || 1;
+  const limit = 2;
+  const skip = (page - 1) * limit;
+  const jobs = await Job.find(queryObject)
+    .populate("owner")
+    .sort(sortKey)
+    .skip(skip)
+    .limit(limit);
+  const totalJobs = await Job.countDocuments(queryObject);
   if (!jobs) throw new NotFoundError("No jobs found");
-  const filtered = jobs.filter(
-    (item) => item.owner.owner.toString() !== req.user.userId
-  );
-  res.status(200).json(filtered);
+
+  const numOfPages = Math.ceil(totalJobs / limit);
+  res.status(200).json({ jobs, totalJobs, page, numOfPages });
 };
 
 export const getsingleJob = async (req, res) => {
@@ -53,12 +100,44 @@ export const getsingleJob = async (req, res) => {
 };
 
 export const getAllCompanies = async (req, res) => {
-  const companies = await Employer.find({
+  const {
+    companySearchKeyword,
+    companySearchLocation,
+    companySearchIndustry,
+    companySearchCurrentPage,
+    companySearchSort,
+  } = req.query;
+  const queryObject = {
     companyName: { $exists: true },
     owner: { $ne: req.user.userId },
-  });
+  };
+  if (companySearchKeyword && companySearchKeyword !== "") {
+    queryObject.companyName.$regex = companySearchKeyword;
+    queryObject.companyName.$options = "i";
+  }
+  if (companySearchLocation && companySearchLocation !== "") {
+    queryObject.state = { $regex: companySearchLocation, $options: "i" };
+  }
+  if (companySearchIndustry && companySearchIndustry !== "ALL") {
+    queryObject.industry = companySearchIndustry;
+  }
+  const sortOptions = {
+    Newest: "-createdAt",
+    Oldest: "createdAt",
+  };
+
+  const sortKey = sortOptions[companySearchSort] || sortOptions.Newest;
+  const page = Number(companySearchCurrentPage) || 1;
+  const limit = 2;
+  const skip = (page - 1) * limit;
+  const companies = await Employer.find(queryObject)
+    .sort(sortKey)
+    .skip(skip)
+    .limit(limit);
+  const totalCompanies = await Employer.countDocuments(queryObject);
   if (!companies) throw new NotFoundError("no companies found");
-  res.status(200).json(companies);
+  const numOfPages = Math.ceil(totalCompanies / limit);
+  res.status(200).json({ companies, totalCompanies, page, numOfPages });
 };
 
 export const getSingleCompany = async (req, res) => {

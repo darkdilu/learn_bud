@@ -7,6 +7,7 @@ import employerCompanyProfileReducer from "./slices/employerCompanyProfileSlice"
 import employerPostJobReducer from "./slices/employerPostJobSlice";
 import jpMessagesReducer from "./slices/JPMessagesSlice";
 import jobSearchReducer from "./slices/JobportalSearches/jobSearchSlice";
+import companySearchReducer from "./slices/JobportalSearches/companySearchSlice";
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     employerPostJob: employerPostJobReducer,
     jpMessages: jpMessagesReducer,
     jobSearch: jobSearchReducer,
+    companySearch: companySearchReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),

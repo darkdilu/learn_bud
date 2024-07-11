@@ -6,6 +6,7 @@ export default function SearchSelectElt({
   icon,
   value,
   onChange,
+  isSort,
 }) {
   return (
     <div className="form-row">
@@ -21,7 +22,9 @@ export default function SearchSelectElt({
           value={value}
           onChange={onChange}
         >
-          <option value={"ALL"}>{"ALL"}</option>
+          <option value={isSort ? "Newest" : "ALL"}>
+            {isSort ? "Newest" : "ALL"}
+          </option>
           {list?.map((item) => (
             <option key={item} value={item}>
               {item}

@@ -12,8 +12,29 @@ export const jobSeekerApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getAllJobs: builder.query({
-      query: () => ({
+      query: ({
+        jobSearchKeyword,
+        jobSearchLocation,
+        jobSearchCategory,
+        jobSearchGender,
+        jobSearchJobType,
+        jobSearchExperience,
+        jobSearchQualification,
+        jobSearchSort,
+        jobSearchCurrentPage,
+      }) => ({
         url: `${BASE_URL}/jobseeker/jobs`,
+        params: {
+          jobSearchKeyword,
+          jobSearchLocation,
+          jobSearchCategory,
+          jobSearchGender,
+          jobSearchJobType,
+          jobSearchExperience,
+          jobSearchQualification,
+          jobSearchSort,
+          jobSearchCurrentPage,
+        },
         credentials: "include",
       }),
       keepUnusedDataFor: 2,
@@ -33,8 +54,21 @@ export const jobSeekerApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getAllCompanies: builder.query({
-      query: () => ({
+      query: ({
+        companySearchKeyword,
+        companySearchLocation,
+        companySearchIndustry,
+        companySearchCurrentPage,
+        companySearchSort,
+      }) => ({
         url: `${BASE_URL}/jobseeker/companies`,
+        params: {
+          companySearchKeyword,
+          companySearchLocation,
+          companySearchIndustry,
+          companySearchCurrentPage,
+          companySearchSort,
+        },
         credentials: "include",
       }),
       keepUnusedDataFor: 2,

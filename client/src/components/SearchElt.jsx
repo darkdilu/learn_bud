@@ -6,6 +6,7 @@ export default function SearchElt({
   placeholder,
   value,
   onChange,
+  type,
 }) {
   return (
     <div className="form-row">
@@ -13,7 +14,7 @@ export default function SearchElt({
       <div className="flex items-center">
         <div className="text-2xl py-2 px-3 rounded-lg">{icon}</div>
         <input
-          type="text"
+          type={type || "text"}
           className="form-input"
           placeholder={placeholder}
           value={value}

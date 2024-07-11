@@ -14,6 +14,7 @@ import {
   setExperience,
   setGender,
   setJobLocation,
+  setJobPlace,
   setJobTitle,
   setJobType,
   setQualification,
@@ -36,6 +37,7 @@ export default function EditJobForm() {
     skills,
     deadline,
     jobLocation,
+    jobPlace,
     salary,
   } = useSelector((state) => state.employerPostJob);
   const dispatch = useDispatch();
@@ -58,6 +60,7 @@ export default function EditJobForm() {
         gender,
         skills,
         deadline,
+        jobPlace,
         jobLocation,
         salary,
       }).unwrap();
@@ -89,6 +92,7 @@ export default function EditJobForm() {
       dispatch(setDeadline(dateToShow || ""));
       dispatch(setJobLocation(data.jobLocation));
       dispatch(setSalary(data.salary));
+      dispatch(setJobPlace(data.jobPlace));
     }
   }, [loadingData]);
 
@@ -166,6 +170,12 @@ export default function EditJobForm() {
           value={deadline}
           onchange={(e) => dispatch(setDeadline(e.target.value))}
           type={"date"}
+        />
+        <FormInput
+          title={"Job Place"}
+          value={jobPlace}
+          onchange={(e) => dispatch(setJobPlace(e.target.value))}
+          type={"text"}
         />
         <FormSelect
           title={"Job Location"}

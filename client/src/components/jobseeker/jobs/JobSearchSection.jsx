@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BiSolidSortAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { toggleJobSeekerJobsFilter } from "../../../slices/responsiveSlice";
 import SearchElt from "../../SearchElt";
@@ -7,7 +8,6 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import { TbCategory } from "react-icons/tb";
-import { PiMoney } from "react-icons/pi";
 import { FaRegClock } from "react-icons/fa";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { GrUserExpert } from "react-icons/gr";
@@ -21,18 +21,12 @@ import {
   setJobsearchJobType,
   setJobsearchKeyword,
   setJobsearchLocation,
-  setJobsearchMinsalary,
   setJobSearchOn,
   setJobsearchQualification,
+  setJobsearchSort,
 } from "../../../slices/JobportalSearches/jobSearchSlice";
 const genderlist = ["Male", "Female", "Others"];
-const Experiencelist = [
-  "Fresher",
-  "1-2 Years",
-  "2-4 Years",
-  "4-6 Years",
-  ">6 Years",
-];
+const Experiencelist = ["fresher", "1-2", "2-4", "4-6", ">6"];
 const Qualificationlist = [
   "Certificate",
   "Diploma",
@@ -41,7 +35,7 @@ const Qualificationlist = [
   "Doctorate",
 ];
 
-export default function JobSearchSection() {
+export default function JobSearchSection({ refetch }) {
   const dispatch = useDispatch();
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
@@ -50,7 +44,7 @@ export default function JobSearchSection() {
   const [jobType, setJobType] = useState("ALL");
   const [experience, setExperience] = useState("ALL");
   const [qualification, setQualification] = useState("ALL");
-  const [minSalary, setMinSalary] = useState("");
+  const [sort, setSort] = useState("Newest");
 
   function handleclick() {
     dispatch(setJobsearchKeyword(keyword));
@@ -60,10 +54,10 @@ export default function JobSearchSection() {
     dispatch(setJobsearchJobType(jobType));
     dispatch(setJobsearchExperience(experience));
     dispatch(setJobsearchQualification(qualification));
-    dispatch(setJobsearchMinsalary(minSalary));
+    dispatch(setJobsearchSort(sort));
     dispatch(setJobsearchCurrentPage(1));
     dispatch(setJobSearchOn());
-    //refetch here
+    refetch();
   }
 
   function handleReset() {
@@ -71,17 +65,17 @@ export default function JobSearchSection() {
     setCategory("ALL");
     setExperience("ALL");
     setQualification("ALL");
+    setSort("Newest");
     setKeyword("");
     setLocation("");
     setGender("ALL");
     setJobType("ALL");
-    setMinSalary("");
-    //refetch here
+    refetch();
   }
 
-  useEffect(() => {
+  /*useEffect(() => {
     handleReset();
-  }, []);
+  }, []);*/
 
   return (
     <div
@@ -107,6 +101,14 @@ export default function JobSearchSection() {
       >
         Reset
       </button>
+      <SearchSelectElt
+        title={"sort"}
+        isSort
+        icon={<BiSolidSortAlt />}
+        list={["Oldest"]}
+        value={sort}
+        onChange={(e) => setSort(e.target.value)}
+      />
       <SearchElt
         title={"Search by Keywords"}
         icon={<CiSearch />}
@@ -166,13 +168,6 @@ export default function JobSearchSection() {
         onChange={(e) => setQualification(e.target.value)}
         icon={<IoSchoolOutline />}
         list={Qualificationlist}
-      />
-      <SearchElt
-        title={"Min Salary"}
-        value={minSalary}
-        onChange={(e) => setMinSalary(e.target.value)}
-        icon={<PiMoney />}
-        placeholder={"Enter LPA"}
       />
     </div>
   );

@@ -10,6 +10,7 @@ const initialState = {
   gender: "All",
   skills: "",
   deadline: "",
+  jobPlace: "",
   jobLocation: "On-site",
   salary: "",
 };
@@ -29,6 +30,9 @@ const employerPostJobSlice = createSlice({
     },
     setJobType: (state, { payload }) => {
       state.jobType = payload;
+    },
+    setJobPlace: (state, { payload }) => {
+      state.jobPlace = payload;
     },
     setQualification: (state, { payload }) => {
       state.qualification = payload;
@@ -63,6 +67,7 @@ const employerPostJobSlice = createSlice({
       state.deadline = "";
       state.jobLocation = "On-site";
       state.salary = "";
+      state.jobPlace = "";
     },
   },
 });
@@ -75,6 +80,7 @@ export const {
   setJobType,
   setDeadline,
   setExperience,
+  setJobPlace,
   setGender,
   setJobLocation,
   setQualification,
