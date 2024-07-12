@@ -48,6 +48,9 @@ const JobSeekerSchema = new Schema(
     totalExperience: {
       type: String,
     },
+    gender: {
+      type: String,
+    },
     resume: {
       type: String,
     },

@@ -2,6 +2,7 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import LandingPageSmallSearch from "./LandingPageSmallSearch";
+import { Link } from "react-router-dom";
 
 export default function LandingSection() {
   return (
@@ -27,9 +28,12 @@ export default function LandingSection() {
             seeker
           />
           <div>
-            <button className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg">
+            <Link
+              to={"/jobseeker/jobs"}
+              className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
+            >
               Find Jobs
-            </button>
+            </Link>
           </div>
         </div>
         <p className="mt-3">

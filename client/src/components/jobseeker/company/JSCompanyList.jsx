@@ -38,7 +38,7 @@ export default function JSCompanyList({ data, isLoading, refetch }) {
             id={x._id}
           />
         ))}
-      {data?.companies?.length < 1 && <h1> No jobs found</h1>}
+      {data?.companies?.length < 1 && <h1> No companies found</h1>}
       {companySearchTotalPage > 1 && (
         <Pagination
           refetch={refetch}

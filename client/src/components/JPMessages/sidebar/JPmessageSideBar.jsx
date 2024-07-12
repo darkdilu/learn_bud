@@ -8,7 +8,7 @@ export default function JPmessageSideBar() {
   return (
     <div
       className={`border-r-2 p-4 flex flex-col w-full md:w-fit ${
-        showSide ? "block" : "hidden"
+        showSide ? "block" : "hidden md:block"
       }`}
     >
       <MessageSearch />

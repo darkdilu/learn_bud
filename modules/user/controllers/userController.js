@@ -41,11 +41,13 @@ export const saveEmployer = async (req, res) => {
 
 export const saveJobSeeker = async (req, res) => {
   const jobseeker = await JobSeeker.findOne({ owner: req.user.userId });
+  const user = await User.findById(req.user.userId);
   if (jobseeker) {
     res.status(200).json({ msg: "success", jobseeker });
   } else {
     const newSeeker = new JobSeeker({
       owner: req.user.userId,
+      gender: user.gender,
     });
     await newSeeker.save();
     res.status(201).json({ msg: "success", newSeeker });
@@ -70,28 +72,28 @@ export const uploadImage = async (req, res) => {
   }
 };
 
-export const checkEmployerProfile = async (req, res)=>{
-  const employer = await Employer.findOne({owner: req.user.userId})
+export const checkEmployerProfile = async (req, res) => {
+  const employer = await Employer.findOne({ owner: req.user.userId });
   if (!employer) {
     const newEmployer = new Employer({
-      owner: req.user.userId
-    })
-    await newEmployer.save()
-    res.status(201).json({msg: "success"})
+      owner: req.user.userId,
+    });
+    await newEmployer.save();
+    res.status(201).json({ msg: "success" });
   } else {
-    res.status(200).json({msg: "already created"})
+    res.status(200).json({ msg: "already created" });
   }
-}
+};
 
 export const checkJobSeekerProfile = async (req, res) => {
-  const seeker = await JobSeeker.findOne({owner: req.user.userId})
-  if(!seeker){
+  const seeker = await JobSeeker.findOne({ owner: req.user.userId });
+  if (!seeker) {
     const newSeeker = new JobSeeker({
-      owner: req.user.userId
-    })
-    await newSeeker.save()
-    res.status(201).json({msg: "success"})
+      owner: req.user.userId,
+    });
+    await newSeeker.save();
+    res.status(201).json({ msg: "success" });
   } else {
-    res.status(200).json({msg: "already created"})
+    res.status(200).json({ msg: "already created" });
   }
-}
+};

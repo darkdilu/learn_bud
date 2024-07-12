@@ -25,7 +25,7 @@ const initialState = {
   resume: "",
   currentSalary: "",
   expectedSalary: "",
-  totalExperience: "",
+  totalExperience: "fresher",
   preferredLocation: "",
   skills: "",
   languages: "",
@@ -152,7 +152,7 @@ const dataCollectionSlice = createSlice({
       state.resume = "";
       state.currentSalary = "";
       state.expectedSalary = "";
-      state.totalExperience = "";
+      state.totalExperience = "fresher";
       state.preferredLocation = "";
       state.skills = "";
       state.languages = "";
@@ -181,7 +181,7 @@ const dataCollectionSlice = createSlice({
         : "";
       state.totalExperience = payload.totalExperience
         ? payload.totalExperience
-        : "";
+        : "fresher";
       state.preferredLocation = payload.preferredLocation
         ? payload.preferredLocation.toString()
         : "";

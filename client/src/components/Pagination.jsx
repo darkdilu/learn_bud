@@ -3,6 +3,7 @@ import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { setJobsearchCurrentPage } from "../slices/JobportalSearches/jobSearchSlice";
 import { setCompanySearchCurrentPage } from "../slices/JobportalSearches/companySearchSlice";
+import { setCandidateSearchCurrentPage } from "../slices/JobportalSearches/candidateSearchSlice";
 
 export default function Pagination({
   currentPage,
@@ -10,6 +11,8 @@ export default function Pagination({
   refetch,
   jobsearch,
   companysearch,
+  candidatesearch,
+  allApplicant,
 }) {
   const dispatch = useDispatch();
 
@@ -17,6 +20,9 @@ export default function Pagination({
     if (currentPage === 1) return;
     if (jobsearch) dispatch(setJobsearchCurrentPage(currentPage - 1));
     if (companysearch) dispatch(setCompanySearchCurrentPage(currentPage - 1));
+    if (candidatesearch)
+      dispatch(setCandidateSearchCurrentPage(currentPage - 1));
+    if (allApplicant) allApplicant(currentPage - 1);
     refetch();
   }
 
@@ -24,6 +30,9 @@ export default function Pagination({
     if (currentPage === totalPage) return;
     if (jobsearch) dispatch(setJobsearchCurrentPage(currentPage + 1));
     if (companysearch) dispatch(setCompanySearchCurrentPage(currentPage + 1));
+    if (candidatesearch)
+      dispatch(setCandidateSearchCurrentPage(currentPage + 1));
+    if (allApplicant) allApplicant(currentPage + 1);
     refetch();
   }
 

@@ -14,6 +14,7 @@ import {
 } from "../../slices/dataCollectionSlice";
 import Loading from "../Loading";
 import { useUpdateResumeMutation } from "../../slices/jobSeekerApiSlice";
+import FormSelect from "../FormSelect";
 
 export default function PreferenceElt() {
   const {
@@ -93,15 +94,12 @@ export default function PreferenceElt() {
           className="form-input"
         />
       </div>
-      <div className="form-row">
-        <label className="form-label">Total Experience</label>
-        <input
-          type="number"
-          className="form-input"
-          value={totalExperience}
-          onChange={(e) => dispatch(setTotalExperience(e.target.value))}
-        />
-      </div>
+      <FormSelect
+        title={"Total Experience"}
+        list={["fresher", "0-1", "1-2", "2-4", "4-6", ">6"]}
+        value={totalExperience}
+        onchange={(e) => dispatch(setTotalExperience(e.target.value))}
+      />
       <div className="form-row">
         <label className="form-label">Preffered Locations</label>
         <input

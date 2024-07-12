@@ -54,6 +54,10 @@ export const addNewJob = async (req, res) => {
     userOwner: req.user.userId,
   });
   await newJob.save();
+  const employer = await Employer.findById(req.user.employerId);
+  employer.totalJobs.push(newJob._id);
+  await employer.save();
+
   res.status(201).json({ msg: "Job added successfully" });
 };
 
@@ -121,12 +125,55 @@ export const logoUpload = async (req, res) => {
 };
 
 export const getAllCandidates = async (req, res) => {
-  const candidates = await JobSeeker.find({
+  const {
+    candidateSearchKeyword,
+    candidateSearchLocation,
+    candidateSearchGender,
+    candidateSearchExperience,
+    candidateSearchQualification,
+    candidateSearchSort,
+    candidateSearchCurrentPage,
+  } = req.query;
+  const queryObject = {
     dataCollected: true,
     owner: { $ne: req.user.userId },
-  }).populate("owner");
+  };
+  if (candidateSearchKeyword && candidateSearchKeyword !== "") {
+    queryObject.fullName = { $regex: candidateSearchKeyword, $options: "i" };
+  }
+  if (candidateSearchLocation && candidateSearchLocation !== "") {
+    queryObject.preferredLocation = {
+      $regex: candidateSearchLocation,
+      $options: "i",
+    };
+  }
+  if (candidateSearchGender && candidateSearchGender !== "ALL") {
+    queryObject.gender = candidateSearchGender;
+  }
+  if (candidateSearchExperience && candidateSearchExperience !== "ALL") {
+    queryObject.totalExperience = candidateSearchExperience;
+  }
+  if (candidateSearchQualification && candidateSearchQualification !== "ALL") {
+    queryObject.qualification = candidateSearchQualification;
+  }
+  const sortOptions = {
+    Newest: "-createdAt",
+    Oldest: "createdAt",
+  };
+
+  const sortKey = sortOptions[candidateSearchSort] || sortOptions.Newest;
+  const page = Number(candidateSearchCurrentPage) || 1;
+  const limit = 2;
+  const skip = (page - 1) * limit;
+  const candidates = await JobSeeker.find(queryObject)
+    .populate("owner")
+    .sort(sortKey)
+    .skip(skip)
+    .limit(limit);
+  const totalCandidates = await JobSeeker.countDocuments(queryObject);
   if (!candidates) throw new NotFoundError("No jobseekers found");
-  res.status(200).json(candidates);
+  const numOfPages = Math.ceil(totalCandidates / limit);
+  res.status(200).json({ candidates, totalCandidates, page, numOfPages });
 };
 
 export const getSingleCandidate = async (req, res) => {
@@ -136,12 +183,44 @@ export const getSingleCandidate = async (req, res) => {
 };
 
 export const getAllEmCompanies = async (req, res) => {
-  const companies = await Employer.find({
+  const {
+    companySearchKeyword,
+    companySearchLocation,
+    companySearchIndustry,
+    companySearchCurrentPage,
+    companySearchSort,
+  } = req.query;
+  const queryObject = {
     _id: { $ne: req.user.employerId },
     companyName: { $exists: true },
-  });
-  if (!companies) throw new NotFoundError("No companies found");
-  res.status(200).json(companies);
+  };
+  if (companySearchKeyword && companySearchKeyword !== "") {
+    queryObject.companyName.$regex = companySearchKeyword;
+    queryObject.companyName.$options = "i";
+  }
+  if (companySearchLocation && companySearchLocation !== "") {
+    queryObject.state = { $regex: companySearchLocation, $options: "i" };
+  }
+  if (companySearchIndustry && companySearchIndustry !== "ALL") {
+    queryObject.industry = companySearchIndustry;
+  }
+  const sortOptions = {
+    Newest: "-createdAt",
+    Oldest: "createdAt",
+  };
+
+  const sortKey = sortOptions[companySearchSort] || sortOptions.Newest;
+  const page = Number(companySearchCurrentPage) || 1;
+  const limit = 2;
+  const skip = (page - 1) * limit;
+  const companies = await Employer.find(queryObject)
+    .sort(sortKey)
+    .skip(skip)
+    .limit(limit);
+  const totalCompanies = await Employer.countDocuments(queryObject);
+  if (!companies) throw new NotFoundError("no companies found");
+  const numOfPages = Math.ceil(totalCompanies / limit);
+  res.status(200).json({ companies, totalCompanies, page, numOfPages });
 };
 
 export const getSingleEmCompany = async (req, res) => {

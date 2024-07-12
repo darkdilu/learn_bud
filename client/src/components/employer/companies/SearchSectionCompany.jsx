@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchElt from "../../SearchElt";
 import { CiSearch } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import SearchSelectElt from "../../SearchSelectElt";
 import { TbCategory } from "react-icons/tb";
-import { IoCalendarClearOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { toggleEmployerCompanyFilter } from "../../../slices/responsiveSlice";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-const membership = ["2010", "2015", "2020"];
+import { BiSolidSortAlt } from "react-icons/bi";
+import {
+  resetCompanySearch,
+  setCompanySearchCurrentPage,
+  setCompanySearchIndustry,
+  setCompanySearchKeyword,
+  setCompanySearchLocation,
+  setCompanySearchOn,
+  setCompanySearchSort,
+} from "../../../slices/JobportalSearches/companySearchSlice";
 
-export default function SearchSectionCompany() {
+export default function SearchSectionCompany({ refetch }) {
   const dispatch = useDispatch();
+  const [keyword, setKeyword] = useState("");
+  const [location, setLocation] = useState("");
+  const [industry, setIndustry] = useState("ALL");
+  const [sort, setSort] = useState("Newest");
+
+  function handleclick() {
+    dispatch(setCompanySearchKeyword(keyword));
+    dispatch(setCompanySearchLocation(location));
+    dispatch(setCompanySearchIndustry(industry));
+    dispatch(setCompanySearchSort(sort));
+    dispatch(setCompanySearchCurrentPage(1));
+    dispatch(setCompanySearchOn());
+    refetch();
+  }
+
+  function handleReset() {
+    dispatch(resetCompanySearch());
+    setKeyword("");
+    setLocation("");
+    setIndustry("ALL");
+    setSort("Newest");
+    refetch();
+  }
   return (
     <div className="flex flex-col justify-start gap-8 h-full sticky left-0 top-0">
       <div className="flex justify-end xl:hidden">
@@ -22,19 +53,45 @@ export default function SearchSectionCompany() {
           <IoMdCloseCircleOutline />
         </button>
       </div>
+      <button
+        onClick={handleclick}
+        className="p-2 rounded-md bg-ascent hover:bg-hover text-primary"
+      >
+        Search
+      </button>
+      <button
+        onClick={handleReset}
+        className="p-2 rounded-md bg-ascent hover:bg-hover text-primary"
+      >
+        Reset
+      </button>
+      <SearchSelectElt
+        title={"sort"}
+        isSort
+        icon={<BiSolidSortAlt />}
+        list={["Oldest"]}
+        value={sort}
+        onChange={(e) => setSort(e.target.value)}
+      />
       <SearchElt
         title={"Search by Keywords"}
         icon={<CiSearch />}
         placeholder={"Title, Skills, Name...."}
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
       />
       <SearchElt
         title={"Location"}
         icon={<SlLocationPin />}
         placeholder={"Enter location"}
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
       />
       <SearchSelectElt
         title={"Industry"}
         icon={<TbCategory />}
+        value={industry}
+        onChange={(e) => setIndustry(e.target.value)}
         list={[
           "Information Technology & Telecommunications",
           "Finance & Insurance",
@@ -47,11 +104,6 @@ export default function SearchSectionCompany() {
           "Media, Entertainment & Arts",
           "Government, Non-Profit & Public Services",
         ]}
-      />
-      <SearchSelectElt
-        title={"Member Since"}
-        icon={<IoCalendarClearOutline />}
-        list={membership}
       />
     </div>
   );

@@ -114,7 +114,8 @@ const EmployerSchema = new Schema(
       type: String,
     },
     totalJobs: {
-      type: Number,
+      type: [mongoose.Types.ObjectId],
+      ref: "Job",
     },
     activeJobs: {
       type: String,

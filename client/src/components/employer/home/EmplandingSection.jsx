@@ -2,6 +2,7 @@ import React from "react";
 import LandingPageSmallSearch from "../../jobseeker/home/LandingPageSmallSearch";
 import { CiSearch } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 export default function EmplandingSection() {
   return (
@@ -23,9 +24,12 @@ export default function EmplandingSection() {
             icon={<SlLocationPin />}
           />
 
-          <button className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg">
+          <Link
+            to={"/employer/candidates"}
+            className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
+          >
             Find Candidates
-          </button>
+          </Link>
         </div>
         <p className="mt-3">
           Popular Searches:{" "}

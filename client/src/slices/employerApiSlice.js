@@ -71,8 +71,25 @@ export const employerApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getAllCandidates: builder.query({
-      query: () => ({
+      query: ({
+        candidateSearchKeyword,
+        candidateSearchLocation,
+        candidateSearchGender,
+        candidateSearchExperience,
+        candidateSearchQualification,
+        candidateSearchSort,
+        candidateSearchCurrentPage,
+      }) => ({
         url: `${BASE_URL}/employer/candidates`,
+        params: {
+          candidateSearchKeyword,
+          candidateSearchLocation,
+          candidateSearchGender,
+          candidateSearchExperience,
+          candidateSearchQualification,
+          candidateSearchSort,
+          candidateSearchCurrentPage,
+        },
         credentials: "include",
       }),
       keepUnusedDataFor: 3,
@@ -85,8 +102,21 @@ export const employerApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 3,
     }),
     getAllEmployerCompanies: builder.query({
-      query: () => ({
+      query: ({
+        companySearchKeyword,
+        companySearchLocation,
+        companySearchIndustry,
+        companySearchCurrentPage,
+        companySearchSort,
+      }) => ({
         url: `${BASE_URL}/employer/companies`,
+        params: {
+          companySearchKeyword,
+          companySearchLocation,
+          companySearchIndustry,
+          companySearchCurrentPage,
+          companySearchSort,
+        },
         credentials: "include",
       }),
       keepUnusedDataFor: 3,

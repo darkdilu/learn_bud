@@ -17,6 +17,7 @@ import {
 import { useUpdatePreferencesMutation } from "../../../../slices/jobSeekerApiSlice";
 import { toast } from "react-toastify";
 import Loading from "../../../Loading";
+import FormSelect from "../../../FormSelect";
 
 export default function JSPreferences({ toggle, togglestate }) {
   const state = useSelector((state) => state.dataCollection);
@@ -63,9 +64,9 @@ export default function JSPreferences({ toggle, togglestate }) {
         value={state.expectedSalary}
         onchange={(e) => dispatch(setExpectedSalary(e.target.value))}
       />
-      <FormInput
+      <FormSelect
         title={"Total Experience"}
-        type={"number"}
+        list={["fresher", "0-1", "1-2", "2-4", "4-6", ">6"]}
         value={state.totalExperience}
         onchange={(e) => dispatch(setTotalExperience(e.target.value))}
       />

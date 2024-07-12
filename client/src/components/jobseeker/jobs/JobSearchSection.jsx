@@ -26,7 +26,7 @@ import {
   setJobsearchSort,
 } from "../../../slices/JobportalSearches/jobSearchSlice";
 const genderlist = ["Male", "Female", "Others"];
-const Experiencelist = ["fresher", "1-2", "2-4", "4-6", ">6"];
+const Experiencelist = ["fresher", "0-1", "1-2", "2-4", "4-6", ">6"];
 const Qualificationlist = [
   "Certificate",
   "Diploma",
