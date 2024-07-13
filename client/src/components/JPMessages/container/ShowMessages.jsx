@@ -26,7 +26,9 @@ export default function ShowMessages() {
 
   useEffect(() => {
     setTimeout(() => {
-      lastMessageRef.current?.scrollIntoView({ behaviour: "smooth" });
+      if (lastMessageRef.current) {
+        lastMessageRef.current.scrollTop = lastMessageRef.current.scrollHeight;
+      }
     }, 100);
     dispatch(setConversationMessages(data));
   }, [data]);
@@ -34,12 +36,10 @@ export default function ShowMessages() {
     <Loading />
   ) : (
     <>
-      <div id="mcon" className="px-4 flex-1 overflow-auto">
+      <div id="mcon" className="px-4 flex-1 overflow-auto" ref={lastMessageRef}>
         {conversationMessages?.length > 0 &&
           conversationMessages.map((item) => (
-            <div key={item._id} ref={lastMessageRef}>
-              <SingleMessage data={item} />
-            </div>
+            <SingleMessage key={item._id} data={item} />
           ))}
       </div>
       <MessageInput refetch={refetch} />

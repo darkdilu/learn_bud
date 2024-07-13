@@ -3,8 +3,8 @@ import { LineChart } from "@mui/x-charts/LineChart";
 
 export default function JSGraphContainer() {
   return (
-    <div className="p-5 bg-background2 my-4 rounded-lg">
-      <h1 className="text-xl">Your Profile views</h1>
+    <div className="p-5 bg-background2 my-4 rounded-lg hidden">
+      <h1 className="text-xl">Your recent views</h1>
       <LineChart
         xAxis={[
           {

@@ -63,6 +63,10 @@ const JobSeekerSchema = new Schema(
     oneWord: {
       type: String,
     },
+    profileViews: {
+      type: Number,
+      default: 0,
+    },
     qualification: {
       type: String,
       enum: [

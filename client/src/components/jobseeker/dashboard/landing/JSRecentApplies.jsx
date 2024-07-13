@@ -1,10 +1,33 @@
 import React from "react";
+import { useGetAllAppliedJobsQuery } from "../../../../slices/jobSeekerApiSlice";
+import Loading from "../../../Loading";
+import JSDashJobCard from "../JSDashJobCard";
 
 export default function JSRecentApplies() {
-  return (
+  const { data, isLoading } = useGetAllAppliedJobsQuery();
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="bg-background2 p-3 rounded-lg my-4">
       <h1 className="text-xl my-3">Recent Applications</h1>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4"></div>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+        {data.appliedJobs.length > 0 &&
+          data.appliedJobs
+            .slice(0, 6)
+            .map((item) => (
+              <JSDashJobCard
+                key={item._id}
+                owner={item.owner}
+                jobTitle={item.jobTitle}
+                salary={item.salary}
+                skills={item.skills}
+                location={item.jobLocation}
+                jobId={item._id}
+                shortlist={item.shortListed}
+                reject={item.rejected}
+              />
+            ))}
+      </div>
     </div>
   );
 }

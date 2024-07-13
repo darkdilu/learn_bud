@@ -4,6 +4,8 @@ const initialState = {
   selectedConversation: null,
   conversationMessages: [],
   showSide: true,
+  emList: [],
+  jsList: [],
 };
 
 const jpMessagesSlice = createSlice({
@@ -22,6 +24,12 @@ const jpMessagesSlice = createSlice({
     toggleShowSide: (state) => {
       state.showSide = !state.showSide;
     },
+    setEmlist: (state, { payload }) => {
+      state.emList = payload;
+    },
+    setJsList: (state, { payload }) => {
+      state.jsList = payload;
+    },
   },
 });
 
@@ -31,4 +39,6 @@ export const {
   setSelectedConversation,
   resetMessages,
   toggleShowSide,
+  setEmlist,
+  setJsList,
 } = jpMessagesSlice.actions;

@@ -179,6 +179,8 @@ export const getAllCandidates = async (req, res) => {
 export const getSingleCandidate = async (req, res) => {
   const candidate = await JobSeeker.findById(req.params.id).populate("owner");
   if (!candidate) throw new NotFoundError("No candidate found");
+  candidate.profileViews = candidate.profileViews + 1;
+  await candidate.save();
   res.status(200).json(candidate);
 };
 
