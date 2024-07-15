@@ -2,15 +2,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSocketContext } from "../../context/SocketContext";
 import { useEffect } from "react";
 import { setConversationMessages } from "../../slices/JPMessagesSlice";
+import { useUpdatemsgNotificationMutation } from "../../slices/JPMessagesApiSlice";
 
 const useListenSocketMessages = () => {
   const { socket, setNotification, notification } = useSocketContext();
+  //const [updatemsgNotification] = useUpdatemsgNotificationMutation();
   const { conversationMessages, selectedConversation } = useSelector(
     (state) => state.jpMessages
   );
-  const { type, userInfo } = useSelector((state) => state.allUsers);
+  const { type, userInfo, EInfo, JSInfo } = useSelector(
+    (state) => state.allUsers
+  );
 
-  console.log(notification);
   const dispatch = useDispatch();
 
   useEffect(() => {

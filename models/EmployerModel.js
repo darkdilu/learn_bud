@@ -73,6 +73,9 @@ const EmployerSchema = new Schema(
     founded: {
       type: Date,
     },
+    messageNotification: {
+      type: [],
+    },
     size: {
       type: String,
       enum: ["10-50", "50-100", "100-200", "200-400", "400-800", ">800"],

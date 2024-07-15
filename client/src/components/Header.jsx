@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { homeLinks1 } from "../utils/links";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -13,12 +13,16 @@ import { resetData } from "../slices/dataCollectionSlice";
 import { useCheckEmployerMutation } from "../slices/userApiSlice";
 import useListenSocketMessages from "../hooks/JPmessages/useListenSocketMessages";
 import MessageNotification from "./MessageNotification";
+import { useSocketContext } from "../context/SocketContext";
 
 export default function Header() {
   const location = useLocation();
   const pathname = location.pathname.toString();
   const { showJobSeekerSmallBar } = useSelector((state) => state.responsive);
-  const { userInfo } = useSelector((state) => state.allUsers);
+  const { setNotification } = useSocketContext();
+  const { userInfo, JSInfo, EInfo, type } = useSelector(
+    (state) => state.allUsers
+  );
   const [showLogout, setShowLogout] = useState(false);
   const [logoutUser] = useLogoutUserMutation();
   const [checkEmployer] = useCheckEmployerMutation();
@@ -55,6 +59,17 @@ export default function Header() {
       toast.error(err?.data?.msg || err?.error);
     }
   }
+
+  useEffect(() => {
+    if (type === "employer") {
+      setNotification(EInfo?.messageNotification || []);
+    }
+
+    if (type === "jobseeker") {
+      setNotification(JSInfo?.messageNotification || []);
+    }
+  }, [userInfo, JSInfo, EInfo, type]);
+
   return (
     <header
       className={`${

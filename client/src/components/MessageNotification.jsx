@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineMessage } from "react-icons/md";
 import { useSocketContext } from "../context/SocketContext";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useUpdatemsgNotificationMutation } from "../slices/JPMessagesApiSlice";
 
 export default function MessageNotification() {
   const [isOpen, setIsOpen] = useState(false);
   const { notification } = useSocketContext();
-  const { type } = useSelector((state) => state.allUsers);
+  const [updatemsgNotification] = useUpdatemsgNotificationMutation();
+  const { type, userInfo, EInfo, JSInfo } = useSelector(
+    (state) => state.allUsers
+  );
 
-  function handleClick() {
-    setIsOpen(false);
+  async function updateDatabase(type, id, notification) {
+    try {
+      const res = await updatemsgNotification({
+        myType: type,
+        myId: id,
+        notification: notification,
+      }).unwrap();
+      if (res.msg === "success") {
+        console.log(res.msg);
+        return;
+      } else {
+        console.log(res.msg);
+      }
+    } catch (err) {
+      console.log(err?.data?.msg || err?.error);
+    }
   }
+
+  useEffect(() => {
+    const idToSend = type === "employer" ? EInfo?._id : JSInfo?._id;
+    updateDatabase(type, idToSend, notification);
+  }, [notification]);
   return (
     <div className="relative mx-2">
       <div className="indicator">
@@ -46,7 +69,7 @@ export default function MessageNotification() {
                       : "/jobseeker/dashboard/messages"
                   }
                   key={item.date}
-                  onClick={() => handleClick()}
+                  onClick={() => setIsOpen(false)}
                 >
                   <div className=" text-sm my-3 border-b border-blue-200">
                     <h1>{item.name} send you a message</h1>

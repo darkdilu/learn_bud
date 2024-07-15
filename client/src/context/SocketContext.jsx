@@ -37,6 +37,7 @@ export const SocketContextProvider = ({ children }) => {
       }
     }
   }, [userInfo, JSInfo, EInfo, type]);
+
   return (
     <SocketContext.Provider
       value={{ socket, onlineUsers, notification, setNotification }}

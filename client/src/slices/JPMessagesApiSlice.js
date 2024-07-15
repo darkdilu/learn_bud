@@ -19,8 +19,19 @@ export const JPMessagesApiSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 1,
     }),
+    updatemsgNotification: builder.mutation({
+      query: (data) => ({
+        url: `${BASE_URL}/jobportal/messages/notification`,
+        body: data,
+        method: "PATCH",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
-export const { useSendMessageMutation, useGetMessagesQuery } =
-  JPMessagesApiSlice;
+export const {
+  useSendMessageMutation,
+  useGetMessagesQuery,
+  useUpdatemsgNotificationMutation,
+} = JPMessagesApiSlice;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { employerHomeList } from "../../utils/links";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -14,13 +14,17 @@ import { resetData } from "../../slices/dataCollectionSlice";
 import { useCheckjobSeekerMutation } from "../../slices/userApiSlice";
 import useListenSocketMessages from "../../hooks/JPmessages/useListenSocketMessages";
 import MessageNotification from "../MessageNotification";
+import { useSocketContext } from "../../context/SocketContext";
 
 export default function EmployerHeader() {
   const location = useLocation();
   const dispatch = useDispatch();
   const { showEmployerSmallBar } = useSelector((state) => state.responsive);
-  const { userInfo } = useSelector((state) => state.allUsers);
+  const { userInfo, type, EInfo, JSInfo } = useSelector(
+    (state) => state.allUsers
+  );
   const { data } = useGetCompanyProfileQuery();
+  const { setNotification } = useSocketContext();
   const [showLogout, setShowLogout] = useState(false);
   const [logoutUser] = useLogoutUserMutation();
   const [checkjobSeeker] = useCheckjobSeekerMutation();
@@ -56,6 +60,16 @@ export default function EmployerHeader() {
       toast.error(err?.data?.msg || err?.error);
     }
   }
+
+  useEffect(() => {
+    if (type === "employer") {
+      setNotification(EInfo?.messageNotification || []);
+    }
+
+    if (type === "jobseeker") {
+      setNotification(JSInfo?.messageNotification || []);
+    }
+  }, [userInfo, JSInfo, EInfo, type]);
 
   const pathname = location.pathname.toString();
   return (

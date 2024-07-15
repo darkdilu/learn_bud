@@ -90,6 +90,9 @@ const JobSeekerSchema = new Schema(
     about: {
       type: String,
     },
+    messageNotification: {
+      type: [],
+    },
     appliedJobs: {
       type: [mongoose.Types.ObjectId],
       ref: "Job",
