@@ -12,6 +12,8 @@ import { setType, setUserInfo } from "../../slices/allUsersSlice";
 import { useGetCompanyProfileQuery } from "../../slices/employerApiSlice";
 import { resetData } from "../../slices/dataCollectionSlice";
 import { useCheckjobSeekerMutation } from "../../slices/userApiSlice";
+import useListenSocketMessages from "../../hooks/JPmessages/useListenSocketMessages";
+import MessageNotification from "../MessageNotification";
 
 export default function EmployerHeader() {
   const location = useLocation();
@@ -23,6 +25,8 @@ export default function EmployerHeader() {
   const [logoutUser] = useLogoutUserMutation();
   const [checkjobSeeker] = useCheckjobSeekerMutation();
   const navigate = useNavigate();
+  useListenSocketMessages();
+
   async function handleLogout() {
     try {
       const res = await logoutUser().unwrap();
@@ -88,6 +92,7 @@ export default function EmployerHeader() {
         <div className="text-2xl">
           <IoNotificationsOutline />
         </div>
+        <MessageNotification />
         <button
           className="text-2xl lg:hidden block "
           onClick={() => {

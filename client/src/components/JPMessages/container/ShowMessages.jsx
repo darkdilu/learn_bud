@@ -5,14 +5,14 @@ import { useGetMessagesQuery } from "../../../slices/JPMessagesApiSlice";
 import Loading from "../../Loading";
 import MessageInput from "./MessageInput";
 import { setConversationMessages } from "../../../slices/JPMessagesSlice";
-import useListenSocketMessages from "../../../hooks/JPmessages/useListenSocketMessages";
+import { useSocketContext } from "../../../context/SocketContext";
 
 export default function ShowMessages() {
-  useListenSocketMessages();
   const { selectedConversation, conversationMessages } = useSelector(
     (state) => state.jpMessages
   );
   const { type, EInfo, JSInfo } = useSelector((state) => state.allUsers);
+  const { notification, setNotification } = useSocketContext();
   const senderId = type === "employer" ? EInfo._id : JSInfo._id;
   const receiverId = selectedConversation?.jsId
     ? selectedConversation.jsId._id
@@ -23,6 +23,15 @@ export default function ShowMessages() {
   });
   const lastMessageRef = useRef();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (notification.length > 0) {
+      const userNotification = notification.filter((item) => {
+        return item.senderId !== receiverId;
+      });
+      setNotification(userNotification);
+    }
+  }, [data, isLoading]);
 
   useEffect(() => {
     setTimeout(() => {

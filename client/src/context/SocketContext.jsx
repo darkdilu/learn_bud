@@ -10,13 +10,14 @@ export const useSocketContext = () => {
 export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [notification, setNotification] = useState([]);
   const { userInfo, JSInfo, EInfo, type } = useSelector(
     (state) => state.allUsers
   );
 
   useEffect(() => {
     if (userInfo) {
-      const newId = type === "employer" ? EInfo?._id : JSInfo._id;
+      const newId = type === "employer" ? EInfo?._id : JSInfo?._id;
 
       const socket = io("http://localhost:3000", {
         query: {
@@ -35,9 +36,11 @@ export const SocketContextProvider = ({ children }) => {
         setSocket(null);
       }
     }
-  }, [userInfo, JSInfo, EInfo]);
+  }, [userInfo, JSInfo, EInfo, type]);
   return (
-    <SocketContext.Provider value={{ socket, onlineUsers }}>
+    <SocketContext.Provider
+      value={{ socket, onlineUsers, notification, setNotification }}
+    >
       {children}
     </SocketContext.Provider>
   );

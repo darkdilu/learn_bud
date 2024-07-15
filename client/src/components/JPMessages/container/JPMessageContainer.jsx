@@ -4,6 +4,7 @@ import NoChatSelected from "./NoChatSelected";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  setConversationMessages,
   setSelectedConversation,
   toggleShowSide,
 } from "../../../slices/JPMessagesSlice";
@@ -14,7 +15,10 @@ export default function JPMessageContainer() {
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    return () => dispatch(setSelectedConversation(null));
+    return () => {
+      dispatch(setSelectedConversation(null));
+      dispatch(setConversationMessages([]));
+    };
   }, [setSelectedConversation]);
 
   return (

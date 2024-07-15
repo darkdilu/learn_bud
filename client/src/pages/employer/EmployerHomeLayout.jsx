@@ -8,24 +8,21 @@ import axios from "axios";
 import { BASE_URL } from "../../constants";
 import { setEInfo, setType, setUserInfo } from "../../slices/allUsersSlice";
 import { useGetCompanyProfileQuery } from "../../slices/employerApiSlice";
+import { useGetUserInfoQuery } from "../../slices/authApiSlice";
+import Loading from "../../components/Loading";
+import { SocketContextProvider } from "../../context/SocketContext";
 
 export default function EmployerHomeLayout() {
   const dispatch = useDispatch();
+
   const { data, isLoading } = useGetCompanyProfileQuery();
-  const getInfo = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/auth/userInfo`, {
-        withCredentials: true,
-      });
-      dispatch(setUserInfo(response.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { data: data2, isLoading: loading2 } = useGetUserInfoQuery();
 
   useEffect(() => {
-    getInfo();
-  }, []);
+    if (data2) {
+      dispatch(setUserInfo(data2));
+    }
+  }, [loading2]);
 
   useEffect(() => {
     if (data) {
@@ -34,14 +31,20 @@ export default function EmployerHomeLayout() {
     }
   }, [isLoading]);
 
-  return (
+  return loading2 || isLoading ? (
+    <div className="w-full min-h-screen">
+      <Loading />
+    </div>
+  ) : (
     <div>
-      <EmployerHeader />
-      <EmployerSmallBar />
-      <div className="p-6 lg:px-16">
-        <Outlet />
-      </div>
-      <Footer />
+      <SocketContextProvider>
+        <EmployerHeader />
+        <EmployerSmallBar />
+        <div className="p-6 lg:px-16">
+          <Outlet />
+        </div>
+        <Footer />
+      </SocketContextProvider>
     </div>
   );
 }

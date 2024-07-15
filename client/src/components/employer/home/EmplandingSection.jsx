@@ -26,7 +26,7 @@ export default function EmplandingSection() {
 
           <Link
             to={"/employer/candidates"}
-            className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
+            className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full text-center xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
           >
             Find Candidates
           </Link>

@@ -8,6 +8,8 @@ import JobSeekerSmallBar from "../../components/jobseeker/JobSeekerSmallBar";
 import { useGetJobSeekerDetailsQuery } from "../../slices/jobSeekerApiSlice";
 import { setData } from "../../slices/dataCollectionSlice";
 import { useGetUserInfoQuery } from "../../slices/authApiSlice";
+import Loading from "../../components/Loading";
+import { SocketContextProvider } from "../../context/SocketContext";
 
 export default function HomeLayout() {
   const dispatch = useDispatch();
@@ -27,14 +29,20 @@ export default function HomeLayout() {
       dispatch(setUserInfo(data2));
     }
   }, [loading2]);
-  return (
+  return isLoading || loading2 ? (
+    <div className="w-full min-h-screen">
+      <Loading />
+    </div>
+  ) : (
     <>
-      <Header />
-      <JobSeekerSmallBar />
-      <div className="p-6 lg:px-16">
-        <Outlet />
-      </div>
-      <Footer />
+      <SocketContextProvider>
+        <Header />
+        <JobSeekerSmallBar />
+        <div className="p-6 lg:px-16">
+          <Outlet />
+        </div>
+        <Footer />
+      </SocketContextProvider>
     </>
   );
 }

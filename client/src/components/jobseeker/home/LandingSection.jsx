@@ -27,14 +27,13 @@ export default function LandingSection() {
             icon={<SlLocationPin />}
             seeker
           />
-          <div>
-            <Link
-              to={"/jobseeker/jobs"}
-              className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
-            >
-              Find Jobs
-            </Link>
-          </div>
+
+          <Link
+            to={"/jobseeker/jobs"}
+            className="bg-ascent text-sm px-1 py-2 lg:text-lg w-full text-center xl:w-auto lg:py-5 lg:px-2 text-secondary hover:bg-hover rounded-lg"
+          >
+            Find Jobs
+          </Link>
         </div>
         <p className="mt-3">
           Popular Searches:{" "}

@@ -11,6 +11,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { toggleJobSeekerSmallBar } from "../slices/responsiveSlice";
 import { resetData } from "../slices/dataCollectionSlice";
 import { useCheckEmployerMutation } from "../slices/userApiSlice";
+import useListenSocketMessages from "../hooks/JPmessages/useListenSocketMessages";
+import MessageNotification from "./MessageNotification";
 
 export default function Header() {
   const location = useLocation();
@@ -22,6 +24,7 @@ export default function Header() {
   const [checkEmployer] = useCheckEmployerMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  useListenSocketMessages();
 
   async function handleLogout() {
     try {
@@ -85,6 +88,7 @@ export default function Header() {
         <div className="text-2xl">
           <IoNotificationsOutline />
         </div>
+        <MessageNotification />
         <button
           className="text-2xl lg:hidden block "
           onClick={() => {

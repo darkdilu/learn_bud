@@ -1,17 +1,15 @@
 import React from "react";
-import { IoSearch } from "react-icons/io5";
 
-export default function MessageSearch() {
+export default function MessageSearch({ value, onChange }) {
   return (
     <div className="flex gap-3 items-center">
       <input
         type="text"
         placeholder="Search"
         className="p-2 bg-background2 rounded-xl"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
       />
-      <div className="text-2xl bg-hover text-primary hover:bg-ascent p-1 rounded-full">
-        <IoSearch />
-      </div>
     </div>
   );
 }

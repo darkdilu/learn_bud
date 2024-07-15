@@ -7,7 +7,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import {} from "./context/SocketContext";
+import { SocketContextProvider } from "./context/SocketContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
