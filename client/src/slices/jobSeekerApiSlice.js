@@ -164,6 +164,14 @@ export const jobSeekerApiSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 3,
     }),
+    updatejobNotification: builder.mutation({
+      query: (data) => ({
+        url: `${BASE_URL}/jobseeker/notification`,
+        method: "PATCH",
+        body: data,
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -185,4 +193,5 @@ export const {
   useUpdateProfilePictureMutation,
   useUpdateResumeMutation,
   useGetAllAppliedJobsQuery,
+  useUpdatejobNotificationMutation,
 } = jobSeekerApiSlice;

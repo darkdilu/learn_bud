@@ -11,6 +11,7 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [notification, setNotification] = useState([]);
+  const [jobNotification, setJobNotification] = useState([]);
   const { userInfo, JSInfo, EInfo, type } = useSelector(
     (state) => state.allUsers
   );
@@ -40,7 +41,14 @@ export const SocketContextProvider = ({ children }) => {
 
   return (
     <SocketContext.Provider
-      value={{ socket, onlineUsers, notification, setNotification }}
+      value={{
+        socket,
+        onlineUsers,
+        notification,
+        setNotification,
+        jobNotification,
+        setJobNotification,
+      }}
     >
       {children}
     </SocketContext.Provider>

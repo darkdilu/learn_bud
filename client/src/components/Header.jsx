@@ -14,12 +14,14 @@ import { useCheckEmployerMutation } from "../slices/userApiSlice";
 import useListenSocketMessages from "../hooks/JPmessages/useListenSocketMessages";
 import MessageNotification from "./MessageNotification";
 import { useSocketContext } from "../context/SocketContext";
+import Notification from "./Notification";
+import useListenSocketNotifications from "../hooks/JPNotifications/useListenSocketNotifications";
 
 export default function Header() {
   const location = useLocation();
   const pathname = location.pathname.toString();
   const { showJobSeekerSmallBar } = useSelector((state) => state.responsive);
-  const { setNotification } = useSocketContext();
+  const { setNotification, setJobNotification } = useSocketContext();
   const { userInfo, JSInfo, EInfo, type } = useSelector(
     (state) => state.allUsers
   );
@@ -29,6 +31,7 @@ export default function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useListenSocketMessages();
+  useListenSocketNotifications();
 
   async function handleLogout() {
     try {
@@ -63,10 +66,12 @@ export default function Header() {
   useEffect(() => {
     if (type === "employer") {
       setNotification(EInfo?.messageNotification || []);
+      setJobNotification(EInfo?.notification || []);
     }
 
     if (type === "jobseeker") {
       setNotification(JSInfo?.messageNotification || []);
+      setJobNotification(JSInfo?.notification || []);
     }
   }, [userInfo, JSInfo, EInfo, type]);
 
@@ -100,9 +105,7 @@ export default function Header() {
       </div>
 
       <div className="flex justify-center items-center gap-1 md:gap-5">
-        <div className="text-2xl">
-          <IoNotificationsOutline />
-        </div>
+        <Notification />
         <MessageNotification />
         <button
           className="text-2xl lg:hidden block "

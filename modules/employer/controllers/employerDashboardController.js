@@ -7,6 +7,7 @@ import Employer from "../../../models/EmployerModel.js";
 import Job from "../../../models/JobModel.js";
 import { v2 as cloudinary } from "cloudinary";
 import JobSeeker from "../../../models/JobSeeker.js";
+import { getRecieverSocketId, io } from "../../../socket/socket.js";
 
 export const updateCompanyProfile = async (req, res) => {
   const employer = await Employer.findById(req.user.employerId);
@@ -269,6 +270,24 @@ export const shortListSeeker = async (req, res) => {
   employer.allApplicants = allapplicantArray;
   job.shortListed.push(req.body.applicantId);
   applicant.shortListed.push(req.body.jobId);
+  const recieverSocketId = getRecieverSocketId(applicant._id);
+  if (recieverSocketId) {
+    io.to(recieverSocketId).emit("jobNotification", {
+      senderId: employer._id,
+      name: employer.companyName,
+      action: "shortlisted",
+      isRead: false,
+      date: new Date(),
+    });
+  } else {
+    applicant.notification.unshift({
+      senderId: employer._id,
+      name: employer.companyName,
+      action: "shortlisted",
+      isRead: false,
+      date: new Date(),
+    });
+  }
   await job.save();
   await employer.save();
   await applicant.save();
@@ -297,8 +316,36 @@ export const rejectSeeker = async (req, res) => {
   employer.allApplicants = allapplicantArray;
   job.rejected.push(req.body.applicantId);
   applicant.rejected.push(req.body.jobId);
+  const recieverSocketId = getRecieverSocketId(applicant._id);
+  if (recieverSocketId) {
+    io.to(recieverSocketId).emit("jobNotification", {
+      senderId: employer._id,
+      name: employer.companyName,
+      action: "rejected",
+      isRead: false,
+      date: new Date(),
+    });
+  } else {
+    applicant.notification.unshift({
+      senderId: employer._id,
+      name: employer.companyName,
+      action: "rejected",
+      isRead: false,
+      date: new Date(),
+    });
+  }
   await job.save();
   await employer.save();
   await applicant.save();
+  res.status(200).json({ msg: "success" });
+};
+
+export const updateNotification = async (req, res) => {
+  const { notification } = req.body;
+  const user = await Employer.findByIdAndUpdate(
+    { _id: req.user.employerId },
+    { notification: notification }
+  );
+  if (!user) throw new NotFoundError("No user found");
   res.status(200).json({ msg: "success" });
 };

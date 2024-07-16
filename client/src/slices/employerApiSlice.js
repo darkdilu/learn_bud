@@ -151,6 +151,14 @@ export const employerApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+    updateNotification: builder.mutation({
+      query: (data) => ({
+        url: `${BASE_URL}/employer/notification`,
+        method: "PATCH",
+        body: data,
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -171,4 +179,5 @@ export const {
   useGetAllApplicantsQuery,
   useShortListUserMutation,
   useRejectUserMutation,
+  useUpdateNotificationMutation,
 } = employerApiSlice;

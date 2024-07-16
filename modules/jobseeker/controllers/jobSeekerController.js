@@ -5,6 +5,7 @@ import Job from "../../../models/JobModel.js";
 import JobSeeker from "../../../models/JobSeeker.js";
 import User from "../../../models/UserModel.js";
 import { v2 as cloudinary } from "cloudinary";
+import { getRecieverSocketId, io } from "../../../socket/socket.js";
 
 export const saveData = async (req, res) => {
   const skillsArray = req.body.skills.split(",").map((item) => item.trim());
@@ -295,6 +296,24 @@ export const applyjob = async (req, res) => {
     jobApplied: job._id,
   };
   employer.allApplicants.push(applicantObject);
+  const recieverSocketId = getRecieverSocketId(employer._id);
+  if (recieverSocketId) {
+    io.to(recieverSocketId).emit("jobNotification", {
+      senderId: seeker._id,
+      name: seeker.fullName,
+      action: "applied",
+      isRead: false,
+      date: new Date(),
+    });
+  } else {
+    employer.notification.unshift({
+      senderId: seeker._id,
+      name: seeker.fullName,
+      action: "applied",
+      isRead: false,
+      date: new Date(),
+    });
+  }
   await job.save();
   await seeker.save();
   await employer.save();
@@ -309,4 +328,14 @@ export const getAppliedJobs = async (req, res) => {
   ]);
   if (!user) throw new NotFoundError("No user found");
   res.status(200).json(user);
+};
+
+export const updateJobNotification = async (req, res) => {
+  const { notification } = req.body;
+  const user = await JobSeeker.findByIdAndUpdate(
+    { _id: req.user.jobseekerId },
+    { notification: notification }
+  );
+  if (!user) throw new NotFoundError("No user found");
+  res.status(200).json({ msg: "success" });
 };

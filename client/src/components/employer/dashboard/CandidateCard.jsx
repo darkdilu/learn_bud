@@ -46,7 +46,7 @@ export default function CandidateCard({
       const res = await rejectUser({ jobId, applicantId }).unwrap();
       if (res.msg === "success") {
         refetch();
-        toast.dismiss("Rejected");
+        toast.success("Rejected");
       } else {
         toast.error(res.msg);
       }

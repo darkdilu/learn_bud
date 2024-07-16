@@ -12,6 +12,7 @@ import {
   saveData,
   updatebasicDetails,
   updateeducationDetails,
+  updateJobNotification,
   updatepreferences,
   updateprofessionalDetails,
   updateworkDetails,
@@ -41,6 +42,7 @@ router.patch("/profile/basic", validateBasicDetailsInput, updatebasicDetails);
 router.patch("/profile/education", updateeducationDetails);
 router.patch("/profile/work", updateworkDetails);
 router.patch("/profile/professional", updateprofessionalDetails);
+router.patch("/notification", updateJobNotification);
 router.patch(
   "/profile/profile-image",
   upload.single("profilePic"),

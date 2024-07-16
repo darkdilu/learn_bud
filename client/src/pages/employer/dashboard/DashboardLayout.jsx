@@ -17,7 +17,7 @@ export default function DashboardLayout() {
     if (userInfo) {
       return;
     } else {
-      navigate("/employer");
+      navigate("/");
     }
   }, [userInfo]);
   return (

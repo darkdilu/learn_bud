@@ -27,7 +27,7 @@ export default function ApplicantList() {
       const numOfPages = Math.ceil(newArr.length / limit);
       setTotalPage(numOfPages);
     }
-  }, [isLoading, sort]);
+  }, [isLoading, sort, refetch, data]);
 
   return isLoading ? (
     <Loading />

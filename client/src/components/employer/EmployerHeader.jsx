@@ -15,6 +15,8 @@ import { useCheckjobSeekerMutation } from "../../slices/userApiSlice";
 import useListenSocketMessages from "../../hooks/JPmessages/useListenSocketMessages";
 import MessageNotification from "../MessageNotification";
 import { useSocketContext } from "../../context/SocketContext";
+import Notification from "../Notification";
+import useListenSocketNotifications from "../../hooks/JPNotifications/useListenSocketNotifications";
 
 export default function EmployerHeader() {
   const location = useLocation();
@@ -24,12 +26,13 @@ export default function EmployerHeader() {
     (state) => state.allUsers
   );
   const { data } = useGetCompanyProfileQuery();
-  const { setNotification } = useSocketContext();
+  const { setNotification, setJobNotification } = useSocketContext();
   const [showLogout, setShowLogout] = useState(false);
   const [logoutUser] = useLogoutUserMutation();
   const [checkjobSeeker] = useCheckjobSeekerMutation();
   const navigate = useNavigate();
   useListenSocketMessages();
+  useListenSocketNotifications();
 
   async function handleLogout() {
     try {
@@ -64,10 +67,12 @@ export default function EmployerHeader() {
   useEffect(() => {
     if (type === "employer") {
       setNotification(EInfo?.messageNotification || []);
+      setJobNotification(EInfo?.notification || []);
     }
 
     if (type === "jobseeker") {
       setNotification(JSInfo?.messageNotification || []);
+      setJobNotification(JSInfo?.notification || []);
     }
   }, [userInfo, JSInfo, EInfo, type]);
 
@@ -103,9 +108,7 @@ export default function EmployerHeader() {
       </div>
 
       <div className="flex justify-center items-center gap-3 md:gap-5">
-        <div className="text-2xl">
-          <IoNotificationsOutline />
-        </div>
+        <Notification />
         <MessageNotification />
         <button
           className="text-2xl lg:hidden block "

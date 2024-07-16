@@ -81,7 +81,7 @@ const UserSchema = new Schema(
     },
     drinking: {
       type: String,
-      enum: ["Often", "Occasional", "Never"],
+      enum: ["Often", "Occational", "Never"],
     },
     smoking: {
       type: String,

@@ -16,6 +16,7 @@ import {
   rejectSeeker,
   shortListSeeker,
   updateCompanyProfile,
+  updateNotification,
 } from "../controllers/employerDashboardController.js";
 import {
   validateCompanyProfileInput,
@@ -45,5 +46,6 @@ router.get("/companies/:id", getSingleEmCompany);
 router.get("/applicants", getApplicants);
 router.patch("/shortlist", shortListSeeker);
 router.patch("/reject", rejectSeeker);
+router.patch("/notification", updateNotification);
 
 export default router;
