@@ -26,7 +26,7 @@ export default function StatsContainer() {
       />
       <InfoCards
         icon={<BiMessageDetail />}
-        no={"74"}
+        no={EInfo?.messageNotification?.length}
         content={"Messages"}
         bg={"bg-yellow-100"}
         text={"text-yellow-700"}

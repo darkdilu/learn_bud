@@ -34,9 +34,12 @@ export default function LandingPage() {
           <button className="bg-green-500 p-2 rounded-lg hover:bg-green-400 w-48">
             E-commerce
           </button>
-          <button className="bg-violet-500 p-2 rounded-lg hover:bg-violet-400 w-48">
+          <Link
+            to={"/study-abroad"}
+            className="bg-violet-500 p-2 text-center rounded-lg hover:bg-violet-400 w-48"
+          >
             Study Abroad
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function ApplicantList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [dataArray, setDataArray] = useState([]);
-  const limit = 2;
+  const limit = 10;
 
   useEffect(() => {
     if (data) {

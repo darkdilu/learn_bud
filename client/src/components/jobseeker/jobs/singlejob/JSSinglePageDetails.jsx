@@ -18,7 +18,7 @@ export default function JSSinglePageDetails({ data }) {
         <JSSinglePageExtra data={data} />
         <JSSkillsDetails data={data} />
         <JSCompanyDetail data={data} />
-        <MessageForm />
+        <MessageForm data={data.owner} />
       </div>
     </div>
   );

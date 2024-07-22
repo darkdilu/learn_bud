@@ -164,7 +164,7 @@ export const getAllCandidates = async (req, res) => {
 
   const sortKey = sortOptions[candidateSearchSort] || sortOptions.Newest;
   const page = Number(candidateSearchCurrentPage) || 1;
-  const limit = 2;
+  const limit = 10;
   const skip = (page - 1) * limit;
   const candidates = await JobSeeker.find(queryObject)
     .populate("owner")
@@ -214,7 +214,7 @@ export const getAllEmCompanies = async (req, res) => {
 
   const sortKey = sortOptions[companySearchSort] || sortOptions.Newest;
   const page = Number(companySearchCurrentPage) || 1;
-  const limit = 2;
+  const limit = 10;
   const skip = (page - 1) * limit;
   const companies = await Employer.find(queryObject)
     .sort(sortKey)

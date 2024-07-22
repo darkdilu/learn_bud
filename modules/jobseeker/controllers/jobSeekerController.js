@@ -78,7 +78,7 @@ export const getAllJobs = async (req, res) => {
   };
   const sortKey = sortOptions[jobSearchSort] || sortOptions.Newest;
   const page = Number(jobSearchCurrentPage) || 1;
-  const limit = 2;
+  const limit = 10;
   const skip = (page - 1) * limit;
   const jobs = await Job.find(queryObject)
     .populate("owner")
@@ -129,7 +129,7 @@ export const getAllCompanies = async (req, res) => {
 
   const sortKey = sortOptions[companySearchSort] || sortOptions.Newest;
   const page = Number(companySearchCurrentPage) || 1;
-  const limit = 2;
+  const limit = 10;
   const skip = (page - 1) * limit;
   const companies = await Employer.find(queryObject)
     .sort(sortKey)

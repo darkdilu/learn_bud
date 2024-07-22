@@ -1,9 +1,28 @@
 import React from "react";
 import CompanyCard from "./CompanyCard";
-import { featuredCompanies } from "../../../utils/featuredCompanies";
+import { useSelector } from "react-redux";
+import { useGetAllEmployerCompaniesQuery } from "../../../slices/employerApiSlice";
+import Loading from "../../Loading";
 
 export default function FeaturedCompanies() {
-  return (
+  const {
+    companySearchKeyword,
+    companySearchLocation,
+    companySearchIndustry,
+    companySearchCurrentPage,
+    companySearchSort,
+  } = useSelector((state) => state.companySearch);
+  const { data, isLoading, refetch } = useGetAllEmployerCompaniesQuery({
+    companySearchKeyword,
+    companySearchLocation,
+    companySearchIndustry,
+    companySearchCurrentPage,
+    companySearchSort,
+  });
+  console.log(data);
+  return isLoading ? (
+    <Loading />
+  ) : (
     <section className="minusheight bg-background1 rounded-lg mt-2 flex flex-col justify-center px-4">
       <div className="text-center my-5 mb-7">
         <h1 className="lg:text-3xl text-xl my-2">Top Companies</h1>
@@ -12,16 +31,18 @@ export default function FeaturedCompanies() {
         </p>
       </div>
       <div className="grid md:grid-cols-2 grid-cols-1 place-content-between gap-5">
-        {featuredCompanies.map((item) => (
-          <div key={item.image}>
-            <CompanyCard
-              name={item.name}
-              location={item.location}
-              image={item.image}
-              position={item.position}
-            />
-          </div>
-        ))}
+        {data.companies.length > 0 &&
+          data.companies.slice(-4).map((item) => (
+            <div key={item._id}>
+              <CompanyCard
+                name={item.companyName}
+                location={`${item.state}, ${item.country}`}
+                image={item.logo}
+                position={item.totalJobs.length}
+                id={item._id}
+              />
+            </div>
+          ))}
       </div>
     </section>
   );

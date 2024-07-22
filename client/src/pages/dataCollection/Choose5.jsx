@@ -42,6 +42,7 @@ export default function Choose5() {
           hover={"bg-green-400"}
         />
         <ChooseCard
+          to={"/study-abroad"}
           title={"Study Abroad"}
           icon={<PiAirplaneTiltFill fill="#7c3aed" />}
           background={"bg-violet-300"}

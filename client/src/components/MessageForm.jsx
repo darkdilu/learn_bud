@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import { useSendMessageMutation } from "../slices/JPMessagesApiSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loading from "./Loading";
+import { setUserInfo } from "../slices/allUsersSlice";
+import { useGetUserInfoQuery } from "../slices/authApiSlice";
 
 export default function MessageForm({ data }) {
   const [sendMessage, { isLoading }] = useSendMessageMutation();
+  const {
+    data: userData,
+    refetch,
+    isLoading: loadingfetch,
+  } = useGetUserInfoQuery();
   const [message, setMessage] = useState("");
   const { type, EInfo, JSInfo } = useSelector((state) => state.allUsers);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   async function handleSend() {
@@ -24,9 +31,12 @@ export default function MessageForm({ data }) {
         message,
       }).unwrap();
       if (res.msg === "success") {
+        await refetch();
         if (type === "employer") {
+          dispatch(setUserInfo(userData));
           navigate("/employer/dashboard/messages");
         } else {
+          dispatch(setUserInfo(userData));
           navigate("/jobseeker/dashboard/messages");
         }
 

@@ -63,6 +63,10 @@ import JSMessage from "./pages/jobseeker/dashBoard/JSMessage";
 import JSChangePassword from "./pages/jobseeker/dashBoard/JSChangePassword";
 import JSLogout from "./pages/jobseeker/dashBoard/JSLogout";
 import JSdeleteAccount from "./pages/jobseeker/dashBoard/JSdeleteAccount";
+import SAHomeLayout from "./pages/studyAbroad/SAHomeLayout";
+import SAHome from "./pages/studyAbroad/sahome/SAHome";
+import SACountry from "./pages/studyAbroad/sacountry/SACountry";
+import SACountrySinglePage from "./pages/studyAbroad/sacountry/SACountrySinglePage";
 
 function App() {
   const router = createBrowserRouter([
@@ -265,6 +269,22 @@ function App() {
               element: <DeleteAccount />,
             },
           ],
+        },
+      ],
+    },
+    {
+      path: "/study-abroad",
+      element: <SAHomeLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        { index: true, element: <SAHome /> },
+        {
+          path: "country",
+          element: <SACountry />,
+        },
+        {
+          path: "country/:id",
+          element: <SACountrySinglePage />,
         },
       ],
     },

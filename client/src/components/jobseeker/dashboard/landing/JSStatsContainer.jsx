@@ -26,7 +26,7 @@ export default function JSStatsContainer() {
       />
       <InfoCards
         icon={<BiMessageDetail />}
-        no={"0"}
+        no={JSInfo?.messageNotification?.length}
         content={"Messages"}
         bg={"bg-yellow-100"}
         text={"text-yellow-700"}
