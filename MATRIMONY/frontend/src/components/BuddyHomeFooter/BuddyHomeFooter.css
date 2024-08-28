@@ -1,0 +1,115 @@
+.BuddyHomeFooterContainer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgb(240, 235, 235);
+  padding: 10px;
+  border-radius: 40px;
+  box-shadow:40px  #75227726;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.Icon,
+.HomeIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+}
+
+.Icon {
+  background-color: #DD88CF;
+}
+
+.HomeIcon {
+  background-color: #762277da;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .BuddyHomeFooterContainer {
+    width: 90%;
+    height: 55px;
+    position: fixed;
+    top: auto;
+    left: 20px;
+    bottom: 10px;
+    right: 0;
+    border-radius: 40px;
+  }
+
+  .icons {
+    gap: 16px;
+    flex-direction: row;
+  }
+
+  .Icon,
+  .HomeIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 415px) {
+  .BuddyHomeFooterContainer {
+    width: 90%;
+    height: 55px;
+    position: fixed;
+    top: auto;
+    left: 20px;
+    bottom: 10px;
+    right: 0;
+    border-radius: 40px;
+  }
+
+  .icons {
+    gap: 14px;
+  }
+
+  .Icon,
+  .HomeIcon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 376px) {
+  .BuddyHomeFooterContainer {
+    width: 90%;
+    height: 55px;
+    position: fixed;
+    top: auto;
+    left: 20px;
+    bottom: 10px;
+    right: 0;
+    border-radius: 40px;
+  }
+
+  .icons {
+    gap: 12px;
+  }
+
+  .Icon,
+  .HomeIcon {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,16 @@
+
+.customFooter{
+    position: absolute;
+    bottom: 41px;
+}
+.accept-icon{
+    color: green;
+    font-weight: 800;
+    font-size: 14px;
+
+}
+.remove-icon{
+    color:red;
+    font-weight: 800;
+    font-size: 14px;
+}

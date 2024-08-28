@@ -1,0 +1,191 @@
+.anoop16 .koo button {
+  background-color: white;
+  padding: 0;
+  border: none;
+}
+.anoop16 .koo i {
+  font-size: 24px;
+  padding: 0;
+  padding-top: 2px;
+}
+
+.anoop16 .koo {
+  /* background-color: #a5c0c0; */
+  width: 250px;
+  border: 2px solid rgb(207, 203, 203);
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 6px;
+  padding-left: 15px;
+  color: #818080;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.anoop16 .box {
+  width: 700px;
+  margin: auto;
+  /* margin-top: 100px; */
+}
+.anoop16 {
+  /* width: 150%; */
+  background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+  height: 700px;
+  background-position: 0px 40px;
+  padding-top: 7%;
+  background-size: cover;
+}
+/* @media screen and (max-width: 700px) {
+  .reg {
+    width: 700px;
+    background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+    background-image: none;
+    height: 100%;
+    height: 100vh;
+    background-color: #495056;
+  }
+} */
+.anoop16 .card1_1_2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 10px 40px 20px 40px;
+  background-color: white;
+}
+.anoop16 .card1_1_1 input {
+  width: 250px;
+  border: 2px solid rgb(207, 203, 203);
+  height: 30px;
+  border-radius: 5px;
+}
+.anoop16 .card1_1_1 {
+  /* border: 1px solid black; */
+  width: 100%;
+  text-align: center;
+  /* margin-top: 30px; */
+  padding-top: 30px;
+  padding-bottom: 80px;
+  box-shadow: 3px 3px 7px rgb(184, 181, 181);
+  background-color: white;
+}
+.anoop16 .card1_1_1 input {
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.anoop16 .card1_1_1 h3 {
+  background-color: rgb(255, 255, 255);
+  width: 150px;
+  color: #212323;
+  /* font-weight: 500; */
+  margin: auto;
+}
+
+.anoop16 .part1 {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  padding: 20px;
+  align-items: start;
+  text-align: start;
+  gap: 20px;
+}
+.anoop16 .part2 {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  padding: 20px;
+  align-items: start;
+  text-align: start;
+  gap: 20px;
+  /* background-color: #d3e7e7; */
+}
+
+.anoop16 .regbtn {
+  width: 200px;
+  position: absolute;
+  margin-left: -105px;
+
+  background-color: #212020; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.anoop16 .btn-primary {
+  background-color: #6c757d;
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.anoop16 .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #495056;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none;
+}
+.anoop16 .pp {
+  padding-left: 20px;
+  /* width: 10px; */
+}
+
+@media screen and (max-width: 700px) {
+  .anoop16 .box {
+    /* background-image: url("src/assets/Authentication/Backround2.jpeg"); */
+    height: 700px;
+    background-size: cover;
+    background-position: -40px -100px;
+    margin-top: 30px;
+    width: 350px;
+  }
+  .anoop16 {
+    margin: auto;
+    margin-top: 10%;
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 100%;
+    background-size: cover;
+    background-position: 0px -50px;
+    /* margin-top: 10%; */
+    padding-top: 10%;
+  }
+  .anoop16 .card1_1_1 {
+    background-color: #ffffff;
+    width: 320px;
+    /* margin-left: ; */
+    margin: auto;
+    margin-top: -20px;
+    /* padding: 0; */
+  }
+  .anoop16 .part1 {
+    padding: 0;
+    padding-top: 30px;
+  }
+  .anoop16 .part1 input {
+    width: 240px;
+  }
+  .anoop16 .part2 {
+    margin-top: -60px;
+    padding: 0;
+  }
+  .anoop16 .part2 input {
+    width: 240px;
+  }
+  .anoop16 .koo {
+    width: 240px;
+    height: 30px;
+    text-align: end;
+  }
+}

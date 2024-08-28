@@ -1,0 +1,269 @@
+/* src/pages/Messages.css */
+/* src/pages/Messages.css */
+
+.leftsidebar {
+  flex: 0 0 130px;
+  /* Fixed width for left sidebar */
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+  transition: filter 0.3s;
+}
+
+.main.blur {
+  filter: blur(5px);
+}
+
+/* Messages Header */
+.messages-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4B164C;
+  padding-right: 10px;
+  position: relative;
+  margin-left: 80px;
+}
+
+.back-arrow {
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.profilePicContainer {
+  display: flex;
+  align-items: center;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.recent-matches {
+  text-align: left;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #ffffff;
+  padding-left: 90px;
+
+}
+
+.matches-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  margin-left: 80px;
+  overflow-x: scroll;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.matches-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.matches-wrapper img {
+  width: 60px;
+  height: 70px;
+  border-radius: 20%;
+  object-fit: cover;
+  position: relative;
+}
+
+/* Blurred effect for the first image */
+.matches-wrapper img:first-child {
+  filter: blur(4px);
+}
+
+/* Container for the unread messages count */
+.unread-message-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Container for image and overlay */
+.match-item {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Messages List */
+.messages-list {
+  margin-top: 20px;
+  padding: 20px;
+  height: calc(100vh - 70px);
+  margin-left: 80px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.message-item:last-child {
+  border-bottom: none;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.message-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.message-content .info {
+  flex: 1;
+}
+
+.message-content h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details h2 {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.message-time {
+  color: #999;
+}
+
+.last-message {
+  color: #666;
+  font-size: 14px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.message-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Media Queries for responsiveness */
+
+/* For devices with a width of 768px and above */
+@media (max-width: 768px) {
+  .messages-list {
+    height: calc(100vh - 60px);
+    /* Adjust height to fit within viewport minus some padding */
+    margin-left: 0px;
+  }
+
+  .messages-header {
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .matches-wrapper {
+    gap: 10px;
+    margin: 0px;
+  }
+
+  .matches-wrapper img {
+    width: 40px;
+    height: 50px;
+  }
+
+  .recent-matches {
+    padding-left: 10px;
+
+  }
+
+  .message-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* For devices with a width of 415px and below */
+@media (max-width: 415px) {
+  .messages-list {
+    height: calc(100vh - 50px);
+    /* Adjust height to fit within viewport minus some padding */
+    margin-left: 0px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .messages-header {
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .messages-list {
+    height: calc(100vh - 50px);
+    /* Adjust height to fit within viewport minus some padding */
+    margin-left: 0px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .messages-header {
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+
+  .matches-wrapper img {
+    width: 30px;
+    height: 40px;
+
+  }
+}

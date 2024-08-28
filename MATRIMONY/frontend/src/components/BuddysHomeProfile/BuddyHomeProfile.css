@@ -1,0 +1,85 @@
+.buddyHomeProfile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 95%;
+    background-color: #4B164C; /* Adjust color and opacity */
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .buddyHomeProfileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .HeadingprofilePicContainer{
+    position: relative;
+  }
+
+  .onlineDot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(132, 227, 132);
+    position: absolute;
+    top: 0;
+    right: 2px;
+  }
+  
+  
+  .buddyHomeProfileInfo {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .buddyHomeProfileInfo h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .buddyHomeProfileInfo span {
+    display: block;
+  }
+  
+  .onlineStatus {
+    color: limegreen;
+  }
+  
+  .closeButton {
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .buddyHomeProfileOptions {
+    margin-top: 20px;
+  }
+  
+  .buddyHomeProfileOptions button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .buddyHomeProfileOptions button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .logoutButton {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+  }
+  

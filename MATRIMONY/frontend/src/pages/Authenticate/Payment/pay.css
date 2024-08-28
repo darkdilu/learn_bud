@@ -1,0 +1,196 @@
+.anoop20 .side1-7 h1 {
+  position: absolute;
+  margin-top: -45%;
+  font-family: Aldrich;
+  margin-left: -5%;
+}
+.anoop20 .side1-7 {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 12px rgb(187, 186, 186);
+  width: 240px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  box-sizing: border-box;
+  padding-left: 3%;
+  padding-top: 10%;
+  gap: 40px;
+}
+.anoop20 .side1-7 h3 {
+  font-family: Aldrich;
+  font-size: 16px;
+}
+.anoop20 .side1-7 .fa-solid,
+.fa-brands {
+  font-size: 130%;
+  width: 30px;
+}
+.anoop20 .pro1-7 {
+  margin-top: 110%;
+}
+.anoop20 .nav333 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0px 20px;
+}
+
+.anoop20 .nav333 .fa-solid {
+  box-shadow: 0px 0px 0px;
+  background-color: white;
+  margin-top: -20px;
+}
+
+.anoop20 .pay10 {
+  border-radius: 15px;
+  border: 2px solid rgb(186, 185, 185);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1% 3% 1% 3%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: 30%;
+}
+.anoop20 .pay10-1 {
+  border-radius: 15px;
+  border: 2px solid rgb(186, 185, 185);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 4% 3% 4% 3%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: 30%;
+}
+.anoop20 .pay10-1 .pay11 {
+  margin-left: 20px;
+}
+.anoop20 .pay10 img {
+  width: 80px;
+}
+
+.anoop20 .pay10-2 .fa-solid {
+  /* position: absolute; */
+  /* margin-left: 290px; */
+  box-shadow: 0px 0px 0px;
+  padding: 0;
+  background-color: rgb(0, 34, 68);
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+}
+.anoop20 .pay11 p {
+  width: 70px;
+  font-size: 10px;
+  /* margin-left: -10px; */
+  /* background-color: white; */
+}
+.anoop20 .pay11 h3 {
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.anoop20 .pay10-2 {
+  /* background-color: azure; */
+  border-radius: 15px;
+  border: 2px solid rgb(186, 185, 185);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 6% 3% 6% 3%;
+  justify-content: space-between;
+}
+.anoop20 .pay10-2 .pay11 {
+  /* margin-right: 70px; */
+  padding-left: 10%;
+  width: 40%;
+  /* background-color: aqua; */
+}
+.anoop20 .im {
+  background-color: orange;
+  padding: 0 10px 0px 10px;
+  width: 35px;
+}
+
+.anoop20 .pay19 {
+  width: 400px;
+  margin: auto;
+  margin-left: 39%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 30px;
+  /* padding-left: 20px; */
+  align-items: center;
+  /* text-align: start; */
+  /* background-color: antiquewhite; */
+  box-shadow: 2px 2px 7px rgb(178, 177, 177);
+}
+.anoop20 .pay19 button {
+  width: 100%;
+  border: 0;
+  background-color: rgb(102, 41, 78);
+  color: white;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.anoop20 .pay19 h1 {
+  font-size: 35px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(110, 50, 80);
+}
+.anoop20 .p1-1 {
+  background-color: white;
+  font-size: 12px;
+}
+
+.anoop20 .pay19 .meth {
+  /* margin-right: 150px; */
+  width: 100%;
+  font-size: 12px;
+  /* position: absolute; */
+  /* background-color: antiquewhite; */
+}
+@media screen and (max-width: 1030px) {
+  .anoop20 .side1-7 {
+    padding-top: 15%;
+  }
+  .anoop20 .pro1-7 {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .anoop20 .pay19 h1 {
+    font-size: 33px;
+    /* background-color: antiquewhite; */
+  }
+}
+@media screen and (max-width: 700px) {
+  .anoop20 .nav333 {
+    /* background-color: antiquewhite; */
+  }
+  .anoop20 .pay19 h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .anoop20 .side1-7 {
+    display: none;
+  }
+  .anoop20 .pay19 {
+    width: 100%;
+    box-shadow: 0px 0px 0px;
+    /* background-color: antiquewhite; */
+    margin-left: 0;
+  }
+  .anoop20 .meth {
+    /* background-color: antiquewhite; */
+  }
+}

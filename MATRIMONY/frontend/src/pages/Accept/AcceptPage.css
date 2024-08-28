@@ -1,0 +1,171 @@
+.activitycontainer{
+  display: flex;
+  flex-direction: row; /* Added to ensure proper layout */
+  min-height: 100vh; /* Ensure the container covers the full viewport height */
+  background-color: #4B164C;
+  width: 100%;
+  overflow: hidden; /* Prevent overflow to ensure the background stays in place */
+}
+
+.leftsidebar { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  border-radius: 0 40px 40px 0;
+  box-shadow: 8px 0px 40px 0px #75227726;
+}
+
+.main {
+  padding: 20px;
+  width: calc(100% - 130px);
+}
+
+.leftsidebar.blur,
+.main.blur {
+  filter: blur(5px);
+}
+
+.activity-header {
+  position: fixed;
+  top: 0;
+  right: 80px;
+  left: 100px;
+  background-color: #4B164C;
+  padding: 20px;
+  z-index: 1000;
+
+}
+
+.user-list {
+  margin-top: 60px; /* Account for the fixed header */
+  padding-top: 20px;
+  margin-left: 80px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 10px); /* Ensure it covers the available height */
+  overflow-y: auto; /* Enable scrolling within the user list */
+}
+.letter-heading {
+  font-size: 18px; /* Adjust size as needed */
+  font-weight: bold;
+  color: #4B164C; /* Match the header background color or choose another color */
+  margin: 20px 0 10px; /* Adjust margins for spacing */
+  padding: 0 10px; /* Add some padding if needed */
+  border-bottom: 2px solid #ddd; /* Optional border to separate groups */
+  background-color: #f9f9f9; /* Light background to make it stand out */
+  border-radius: 5px; /* Rounded corners for a softer look */
+}
+
+.call-icon {
+  color: red;
+  font-size: 14px;
+}
+
+.video-icon {
+  color: grey;
+  font-size: 14px;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: flex-end;
+
+}
+
+.profilePicContainer {
+  margin-right: 20px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main {
+    order: 0;
+    width: 100%;
+    flex: none;
+    padding: 20px;
+  }
+  .activity-header {
+    left: 0;
+    right: 0;
+  }
+  .user-list {
+    height: calc(100vh - 50px);
+    margin-left:0px;
+  }
+
+}
+
+@media (max-width: 415px) {
+  .user-list {
+    height: calc(100vh - 60px);
+    /* Adjust height to fit within viewport minus some padding */
+  }
+  .activity-header {
+    left: 0;
+    right: 0;
+  }
+  .main {
+    padding: 10px;
+  }
+
+  .user-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .user-list {
+    margin-left:0px;
+  }
+  .user-details {
+    flex: 1;
+  }
+
+  .user-actions {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .user-list {
+    height: calc(100vh - 50px);
+    /* Adjust height to fit within viewport minus some padding */
+      margin-left:0px;
+
+    }
+  
+  .activity-header {
+    left: 0;
+    right: 0;
+  }
+  .main {
+    padding: 10px;
+  }
+
+  .user-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user-details {
+    flex: 1;
+  }
+
+  .user-actions {
+    display: flex;
+    gap: 10px;
+    width: 0;
+  }
+}

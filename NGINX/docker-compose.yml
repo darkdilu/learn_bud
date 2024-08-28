@@ -1,0 +1,16 @@
+
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: my-nginx
+    ports:
+      - "80:80"  
+    volumes:
+      - ./nginx/new.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

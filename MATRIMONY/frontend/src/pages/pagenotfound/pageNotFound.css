@@ -1,0 +1,43 @@
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #4e0a48; /* Deep purple background color */
+    color: #f0e285; /* Soft yellow color for text */
+    text-align: center;
+  }
+  
+  .error-code {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .error-description {
+    margin: 1rem 0;
+  }
+  
+  .try-something-button {
+    padding: 1rem 2rem;
+    border: 2px solid #f0e285;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: #f0e285;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .try-something-button:hover {
+    background-color: #f0e285;
+    color: #4e0a48;
+  }
+  

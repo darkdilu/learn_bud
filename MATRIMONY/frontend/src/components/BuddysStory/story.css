@@ -1,0 +1,90 @@
+
+
+.BuddyPairHomeHeaderStoryContainer {
+  display: flex;
+  overflow-y: auto;
+  scroll-behavior: unset;
+  scrollbar-width: 0;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-left: 15px;
+
+}
+
+.BuddyPairHomeHeaderStoryContainer.blur-background{
+  filter: blur(5px); /* Apply blur effect when notifications are visible */
+  transition: filter 0.3s ease;
+}
+
+.BuddyPairHomeHeaderStoryContainer::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.BuddyPairHomeHeaderStoryContainer::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none; /* Hide the arrows */
+}
+
+.BuddyPairHomeHeaderStoryContainer:hover::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 25px;
+  background: rgba(194, 191, 191, 0.2);
+  border-radius: 3px;
+}
+.BuddyPairHomeHeaderStory {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.BuddyPairHomeHeaderStoryImageborder {
+  border: 3px rgb(227, 171, 171) solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.BuddyPairHomeHeaderStoryUserName {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.BuddyPairHomeHeaderStoryImageMine {
+  margin-top: 1.8px;
+  margin-bottom: 1.6px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.BuddyPairHomeHeaderStoryImageMineContainer {
+  position: relative;
+}
+
+.BuddyPairHomeHeaderStoryImageMineAddIcon {
+  position: absolute;
+  bottom: 10px;
+  right: -1px;
+  border: 2.5px white solid;
+  background-color: rgb(250, 193, 203);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: white;
+  border-radius: 50%;
+}
+
+.BuddyPairHomeHeaderStoryImage {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3.2px rgb(234, 230, 230) solid;
+}

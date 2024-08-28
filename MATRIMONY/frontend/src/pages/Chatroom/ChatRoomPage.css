@@ -1,0 +1,212 @@
+/* General Chatroom Styling */
+.chatroom {
+  margin-top: 60px;
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: 80px;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.chat-call {
+  font-size: 24px;
+  color: white;
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 60%;
+  background-color: #DD88CF;
+}
+
+.message.sent .message-content {
+  background-color: #4B164C;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.message-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.message-input input {
+  flex-grow: 1;
+  padding: 10px 80px 10px 40px; /* Adjust padding for both icons */
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+.pin-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  color: #4B164C;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.mic-icon {
+  position: absolute;
+  right: 55px;
+  font-size: 20px;
+  color: #363cec;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.send-button {
+  background-color: #4B164C;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin-left: 10px;
+}
+
+.send-button svg {
+  font-size: 20px;
+}
+
+/* Mobile View (Max Width 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .chatroom {
+    padding: 10px;
+    margin-left: 0;
+    min-height: calc(100vh - 150px);
+  }
+  .main {
+    order: 0;
+    width: 100%;
+    flex: none;
+    padding: 20px;
+  }
+
+  .activity-header {
+    left: 0;
+    right: 0;
+  }
+  .message-input input {
+    padding: 10px 70px 10px 35px; /* Adjust padding for smaller screens */
+  }
+
+  .pin-icon, .mic-icon {
+    font-size: 18px;
+  }
+
+  .send-button svg {
+    font-size: 18px;
+  }
+}
+
+/* Smaller Mobile View (Max Width 415px) */
+@media (max-width: 415px) {
+  .chatroom {
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .message-content {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .message-input input {
+    padding: 8px 65px 8px 30px; /* Further adjustment for smaller screens */
+  }
+
+  .send-button svg {
+    font-size: 18px;
+  }
+}
+
+/* Extra Small Mobile View (Max Width 375px) */
+@media (max-width: 375px) {
+  .chatroom {
+    padding: 8px;
+    margin-left: 0;
+  }
+
+  .profile-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+  }
+
+  .message-content {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+
+  .pin-icon {
+    left: 8px;
+    font-size: 18px;
+  }
+
+  .mic-icon {
+    right: 50px;
+    font-size: 18px;
+  }
+
+  .send-button {
+    padding: 8px;
+    margin-left: 8px;
+  }
+
+  .send-button svg {
+    font-size: 16px;
+  }
+  .message-input input {
+    padding: 6px 60px 6px 28px; /* Final adjustment for very small screens */
+  }
+}

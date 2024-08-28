@@ -1,0 +1,38 @@
+.footer {
+  background-color: #4B164C;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Footer nav styles */
+.footer-nav {
+  display: flex;
+  gap: 50px;
+
+}
+
+/* Footer nav item styles */
+.footer-nav span {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Media query for desktop view */
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: column;
+    border-top: none;
+    padding: 20px;
+    height: 100%;
+    margin-top: 100px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 50px;
+  }
+}

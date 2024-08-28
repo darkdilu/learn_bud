@@ -1,0 +1,64 @@
+
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3e7f3;
+    /* Light pink background */
+    border-radius: 25px;
+    /* Rounded corners */
+    padding: 0px;
+    /* Padding around the container */
+    margin: 25px;
+    /* Margin around the container */
+    overflow: hidden;
+    height: 38px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 2px white solid;
+}
+
+.header-container.blur-background{
+    filter: blur(5px); /* Apply blur effect when notifications are visible */
+    transition: filter 0.3s ease;
+  }
+
+
+
+.header-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #000;
+    /* Default text color */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowed text */
+    overflow: hidden;
+    /* Hide overflowed text */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transitions */
+}
+
+.header-tab.active {
+    background-color: white;
+    /* Active tab background */
+    color: #007bff;
+    /* Active tab text color */
+    border-radius: 25px;
+    /* Rounded corners for active tab */
+    -webkit-box-shadow: -10px 13px 50px -5px rgba(0,0,0,0.19);
+    -moz-box-shadow: -10px 13px 50px -5px rgba(0,0,0,0.19);
+    box-shadow: -10px 13px 50px -5px rgba(0,0,0,0.19);
+    border: 1px rgb(201, 197, 197) solid;
+}
+    
+
+.header-tab:not(.active):hover {
+    background-color: #e0dce0;
+    /* Hover background for inactive tabs */
+}

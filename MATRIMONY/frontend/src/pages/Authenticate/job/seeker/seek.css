@@ -1,0 +1,78 @@
+.anoop14 {
+  background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+  height: 700px;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: 0px 40px;
+  padding-top: 6%;
+}
+
+.anoop14 .seek {
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  box-shadow: 3px 3px 7px rgb(186, 185, 185);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+}
+.anoop14 .seek-input {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* background-color: aqua; */
+  text-align: start;
+  /* align-items: center; */
+}
+.anoop14 .seek select {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  color: rgb(167, 168, 168);
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.anoop14 .seek input {
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding-left: 15px;
+  height: 30px;
+  border: 2px solid rgb(173, 171, 171);
+}
+.anoop14 .sel {
+  color: rgb(175, 174, 173);
+}
+
+.anoop14 .seek button {
+  margin-top: 20px;
+  width: 250px;
+  background-color: rgb(40, 39, 39);
+  color: aliceblue;
+  height: 30px;
+  border-radius: 5px;
+}
+.anoop14 .seek select {
+  border: 2px solid rgb(181, 179, 179);
+}
+
+@media screen and (max-width: 700px) {
+  .anoop14 {
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 700px;
+    background-size: cover;
+    background-position: -0px -70px;
+    /* margin-top: 10%; */
+    padding-top: 20%;
+  }
+  .anoop14 .seek {
+    width: 290px;
+    background-color: white;
+    box-shadow: 1px 1px 6px rgb(185, 184, 184);
+    margin-top: 0;
+  }
+}

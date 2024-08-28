@@ -1,0 +1,77 @@
+.anoop12 {
+  background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+  height: 700px;
+  /* background-repeat: no-repeat; */
+  background-position: 0px 40px;
+  padding-top: 100px;
+  background-size: cover;
+  /* width: 100%; */
+}
+.anoop12 .job {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* background-color: antiquewhite; */
+  width: 400px;
+  margin: auto;
+  /* margin-top: 100px; */
+  box-shadow: 3px 3px 7px gray;
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: white;
+}
+.anoop12 .job h3 {
+  background-color: white;
+  width: 100px;
+  color: rgb(31, 30, 30);
+}
+.anoop12 .main123 {
+  display: block;
+  /* background-color: aqua; */
+  width: 300px;
+}
+.anoop12 .job button {
+  margin-top: 20px;
+  width: 260px;
+  background-color: rgb(40, 39, 39);
+  color: aliceblue;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.anoop12 .main123 span {
+  display: flex;
+  align-items: center;
+  color: rgb(146, 143, 143);
+  font-size: 17px;
+  font-weight: 550;
+
+  /* background-color: black; */
+}
+
+.anoop12 .main123 input[type="checkbox"] {
+  /* background-color: aqua; */
+  /* color: aqua; */
+  width: 50px;
+  height: 16px;
+}
+
+@media screen and (max-width: 770px) {
+  .anoop12 {
+    /* width: 100%; */
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 700px;
+    background-size: cover;
+    background-position: -0px -70px;
+    /* margin-top: 10%; */
+    padding-top: 20%;
+
+    /* background-color: aqua; */
+  }
+  .anoop12 .job {
+    width: 290px;
+    /* padding: 30px; */
+    box-shadow: 1px 1px 6px rgb(198, 196, 196);
+  }
+}

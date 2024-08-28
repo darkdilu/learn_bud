@@ -1,0 +1,133 @@
+.BuddyNotifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .BuddyNotification1,
+  .BuddyNotification2 {
+    width: 90%;
+    max-width: 350px;
+    padding: 15px;
+    border-radius: 24px;
+    background: #4B164C;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .headingandCross1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .heading1 {
+    color: rgb(89, 89, 242);
+  }
+  
+  .contentBody1 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contentBody1title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contentBody1content {
+    margin-bottom: 10px;
+    color: rgb(109, 105, 105);
+    word-wrap: break-word;
+  }
+  
+  .contentBody1timeOne {
+    font-size: 12px;
+    color: #bbb;
+  }
+  
+  .BuddyNotification2Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .TickAndMessageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .TickAndMessage {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tick {
+    margin-right: 5px;
+  }
+  
+  .message {
+    color: #fff;
+  }
+  
+  .time2 {
+    padding-top: 5px;
+    padding-left: 22px;
+    font-size: 12px;
+    color: #bbb;
+  }
+  
+  .cross2 {
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .BuddyNotifications{
+        margin-left: 25px;
+    }
+    .BuddyNotification1,
+    .BuddyNotification2 {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .contentBody1content,
+    .message {
+      font-size: 12px; /* Smaller font size for better readability on small screens */
+    }
+  
+    .time2,
+    .contentBody1timeOne {
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .headingandCross1 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cross1,
+    .cross2 {
+      align-self: flex-end;
+    }
+  
+    .TickAndMessageContainer {
+      flex-direction: column;
+    }
+  
+    .time2 {
+      padding-top: 0;
+      padding-left: 22px;
+    }
+  }
+  

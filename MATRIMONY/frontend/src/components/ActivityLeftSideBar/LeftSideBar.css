@@ -1,0 +1,112 @@
+.LeftSideBarContainer {
+    display: flex;  
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgb(240, 235, 235);
+    padding: 10px;
+    border-radius: 0 40px 40px 0;
+    box-shadow: 8px 0px 40px 0px #75227726;
+
+}
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+  }
+  
+  .Icon,
+  .HomeIcon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+  }
+  
+  .Icon {
+    background-color: #DD88CF;
+  }
+  
+  .HomeIcon {
+    background-color: #762277da;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .LeftSideBarContainer {
+      width: 100%;
+      height: 60px;
+      position: fixed;
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom:5px;
+      border-radius: 40px 40px ;
+    }
+  
+    .icons {
+      gap: 16px;
+      flex-direction: row;
+    }
+  
+    .Icon,
+    .HomeIcon {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 415px) {
+    .LeftSideBarContainer {
+      height: 50px;
+      padding: 0px;
+      z-index: 1;
+      bottom:5px;
+      border-radius: 40px 40px ;
+    }
+  
+    .icons {
+      gap: 14px;
+    }
+  
+    .Icon,
+    .HomeIcon {
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .LeftSideBarContainer {
+      height: 50px;
+      padding: 0px;
+      z-index: 1;
+      bottom:5px;
+      border-radius: 40px 40px ;
+    }
+  
+  
+    .icons {
+      gap: 12px;
+    }
+  
+    .Icon,
+    .HomeIcon {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+    }
+  }
+  

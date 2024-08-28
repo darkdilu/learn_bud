@@ -1,0 +1,150 @@
+.anoop2 .login {
+  width: 350px;
+  /* height: 400px; */
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  text-align: center;
+  margin: auto;
+
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-shadow: 3px 3px 7px rgb(203, 202, 202);
+  background-color: rgb(255, 255, 255);
+  /* position: absolute; */
+}
+.anoop2 .inputt input {
+  border: 2px solid rgb(207, 203, 203);
+  height: 30px;
+}
+.anoop2 .login h3 {
+  background-color: rgb(255, 255, 255);
+  width: 50px;
+  color: #212323;
+  /* font-weight: 500; */
+  margin: auto;
+}
+
+.anoop2 {
+  background-image: url("src/assets/Authentication/Backround1.jpeg");
+  height: 740px;
+  background-position: 0px 40px;
+  text-align: center;
+  padding-top: 150px;
+  background-size: cover;
+
+  /* margin-top: -100px; */
+}
+
+.anoop2 .inputt {
+  /* border: 1px  black; */
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 3px;
+  width: 250px;
+  margin: auto;
+}
+
+.anoop2 .log1 {
+  width: 250px;
+  margin-top: 20px;
+  background-color: #1a1c1b; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.anoop2 .google {
+  margin-top: 10px;
+  background-color: #20b0f9; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.anoop2 .login input {
+  width: 250px;
+  height: 25px;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+}
+/* 
+img {
+  width: 100%;
+} */
+
+.anoop2 .account {
+  color: #9a9ea7;
+}
+.anoop2 .foot {
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.anoop2 .foot1 {
+  background-color: white;
+  text-decoration: underline;
+  /* margin-left: 0; */
+  /* width: 300px; */
+  margin-right: 98px;
+}
+
+.anoop2 .foot2 {
+  background-color: white;
+}
+
+.anoop2 .a {
+  color: rgb(239, 121, 224);
+}
+@media screen and (max-width: 500px) {
+  .anoop2 img {
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 10px;
+    width: 98%;
+  }
+  .anoop2 {
+    margin: auto;
+    margin-top: 10%;
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 700px;
+    background-size: cover;
+    background-position: 0px -70px;
+    /* margin-top: 10%; */
+    padding-top: 15%;
+  }
+  .anoop2 .login {
+    width: 270px;
+    /* margin-top: 70px; */
+    padding: 10px;
+    background-color: #ffffff;
+    position: relative;
+  }
+  .anoop2 .inputt {
+    background-color: #ffffff;
+    margin-top: 20px;
+  }
+  .anoop2 .foot {
+    background-color: #ffffff;
+    margin-left: 10px;
+  }
+  .anoop2 .foot1 {
+    width: 130px;
+  }
+  .anoop2 .foot2 {
+    width: 230px;
+  }
+}

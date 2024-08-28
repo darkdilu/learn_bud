@@ -1,0 +1,154 @@
+.subscription-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #4B164C;
+  position: relative;
+  width: 100%;
+}
+
+.leftsidebar {
+  flex: 0 0 130px; /* Fixed width for left sidebar */
+}
+.activity-header {
+  position: fixed;
+  top: 0;
+}
+.subscription-main {
+  padding: 20px;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  transition: filter 0.3s;
+}
+
+.subscription-main.blur {
+  filter: blur(5px);
+}
+
+.subscription-content {
+  margin-top: 60px; /* to account for fixed header */
+  padding-top: 20px;
+  margin-left:160px;
+  margin-right: 80px;
+  background-color: #000000;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+.sub-icon-tick {
+  margin-right: 20px;
+}
+
+.plan-card {
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.price {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.limits,
+.premium-features {
+  text-align: left;
+}
+
+.limits h3,
+.premium-features h3 {
+  margin-top: 15px;
+}
+
+.subscribe-button {
+  background-color: #575557;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #949191;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 800;
+  display: block;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .subscription-container {
+    flex-direction: column;
+  }
+
+  .leftsidebar {
+    order: 2;
+    width: 100%;
+  }
+  .subscription-content {
+    height: 100%;
+    margin-left:0px;
+    margin-right: 0;
+    }
+
+  .subscription-main {
+    order: 0;
+    width: 100%;
+    flex: none;
+    padding: 20px;
+  }
+
+  .subscription-main.blur {
+    filter: blur(5px);
+  }
+  .activity-header {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 415px) {
+
+
+  .subscription-content {
+    height: 100%;
+    margin-left:0px;
+    margin-right: 0;
+  }
+
+  .subscription-main {
+    padding: 10px;
+  }
+ 
+
+}
+
+@media (max-width: 375px) {
+  
+
+  .subscription-content {
+  height: 100%;
+  margin-left:0px;
+  margin-right: 0;
+  }
+
+  .subscription-main {
+    padding: 10px;
+  }
+
+}

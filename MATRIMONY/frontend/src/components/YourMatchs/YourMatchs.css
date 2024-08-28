@@ -1,0 +1,95 @@
+.YourMatchConatiner {
+    margin-top: 28px;
+    margin-left: 60px;
+    
+    
+}
+
+.YourMatchHeading {
+    font-size: 21px;
+    margin-bottom: 24px;
+}
+
+.ViewedMyProfileHeading {
+    font-size: 24px;
+    color: rgba(244, 171, 210, 0.932);
+    margin-bottom: 24px;
+}
+
+.YourMatchHeading span {
+    margin-right: 2px;
+    color: rgb(106, 81, 85);
+}
+
+.YourMatchHeading label {
+    color: rgb(211, 158, 167);
+}
+
+.MatchProfileListContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Keeps the items in rows */
+    overflow-y: auto; /* Enables vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+}
+
+.MatchProfileListContainer::-webkit-scrollbar {
+    width: none; /* Adjust the width of the vertical scrollbar */
+}
+
+.MatchProfileListContainer::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none; /* Hide the arrows */
+}
+
+.MatchProfileListContainer::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.MatchProfileListContainer:hover::-webkit-scrollbar-thumb {
+    background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
+@media(max-width:1024px){
+    .YourMatchConatiner {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+    .YourMatchHeading{
+        margin-left: 15px;
+    }
+}
+@media(max-width:913px){
+    .YourMatchConatiner {
+        padding-left: 0px;
+        margin-left: 10px;
+    }
+
+    .YourMatchHeading{
+        margin-left: 15px;
+    }
+}
+@media(max-width:854px){
+    .YourMatchConatiner {
+        padding-left: 0px;
+        margin-left: 6px;
+    }
+
+    .YourMatchHeading{
+        margin-left: 15px;
+    }
+}
+@media(max-width:413px){
+    .YourMatchConatiner {
+        padding: 0px;
+        margin-left: 15px;
+    }
+
+    .YourMatchHeading{
+        margin-left: 15px;
+    }
+}

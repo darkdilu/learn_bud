@@ -1,0 +1,244 @@
+
+.BuddyPairHomeHeaderTitleAndNotificationContainer{
+  position: sticky;
+  top: 0;
+  background-color: white; /* Add a background color to avoid content overlap */
+  z-index: 10; /* Ensure it stays on top of other content */
+  padding: 10px; /* Optional: Add some padding */
+  box-shadow: 0 2px 4px rgba(183, 179, 179, 0.381);
+}
+
+.headingAndBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profileAndNotification{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.BuddyPairHomeHeaderTitleAndNotification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 25px;
+   
+}
+.BuddyPairHomeHeaderTitle{
+  cursor: pointer;
+}
+
+.BuddyPairHomeHeaderTitle.blur-background{
+  filter: blur(5px); /* Apply blur effect when notifications are visible */
+  transition: filter 0.3s ease;
+}
+
+
+.HeadingprofilePicContainer{
+  width: 50px;
+  height: 50px;
+}
+
+.profileAndNotification.blur-background{
+  filter: blur(5px); /* Apply blur effect when notifications are visible */
+  transition: filter 0.3s ease;
+}
+
+.HeadingProfilePic{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;  
+}
+  .BuddyPairHomeHeaderNotificationIcon {
+    font-size: 30px;
+    background-color: rgb(239, 241, 241);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 14px -4px rgba(71, 71, 71, 0.73);
+    display: flex;
+    border: 1px solid rgb(184, 181, 181);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .BuddyPairHomeHeaderNotificationIconDot {
+    width: 5px;
+    height: 5px;
+    background-color: rgb(245, 133, 156);
+    position: absolute;
+    border-radius: 50%;
+    top: 8px;
+    right: 12px;
+  }
+  
+
+  .bar.blur-background{
+    filter: blur(5px); /* Apply blur effect when notifications are visible */
+    transition: filter 0.3s ease;
+  }
+
+  .menuOverlay {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 20; /* Ensure it overlays the other content */
+  }
+
+  .menuList {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background: rgba(128, 0, 128, 0.9); /* Purple background color */
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    max-width: 300px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .menuList li {
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .menuList li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .menuList .selected {
+    background: rgba(255, 255, 255, 0.2); /* Highlight the selected item */
+    border-radius: 5px;
+  }
+
+  .closeMenu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  @media (max-width: 1290px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 80%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }
+
+  @media (max-width: 913px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }
+
+  @media (max-width: 541px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }
+
+  @media (max-width: 431px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }
+  @media (max-width: 415px) {
+    .BuddyPairHomeHeaderTitle{
+      font-size: 24px;
+    }
+    .BuddyPairHomeHeaderNotificationIcon{
+      font-size: 20px;
+      width: 45px;
+      height: 45px;
+    }
+
+    .HeadingprofilePicContainer{
+      width: 45px;
+      height: 45px;
+    }
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      z-index: 20; /* Ensure it overlays the other content */
+    }
+  
+  }
+
+  @media (max-width: 400px) {
+    .BuddyPairHomeHeaderTitle{
+      font-size: 20px;
+    }
+    .BuddyPairHomeHeaderNotificationIcon{
+      font-size: 20px;
+      width: 35px;
+      height: 35px;
+    }
+
+    .HeadingprofilePicContainer{
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 391px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }
+
+  @media (max-width: 345px) {
+    .menuOverlay {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      z-index: 20; /* Ensure it overlays the other content */
+    } 
+  }

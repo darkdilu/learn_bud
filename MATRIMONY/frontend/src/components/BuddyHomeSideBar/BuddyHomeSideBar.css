@@ -1,0 +1,64 @@
+.BuddyHomeSideBarContainer{
+    width: 100%;
+}
+
+.BuddyHomeSideBarSubContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.BuddyHomeSideBarSubContainerIconAndDesc{
+    width: 100%;
+    margin-bottom: 26px;
+    border: 1px rgb(238, 234, 234) solid;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.BuddyHomeSideBarSubContainerIcon{
+    font-size: 24px;
+    color: rgb(99, 96, 96);
+    margin-left: 40px;
+}
+
+.BuddyHomeSideBarSubContainerDesc{
+    font-size: 16px;
+    margin-left: 8px;
+    color: rgb(99, 96, 96);
+    margin-left: 40px;
+}
+
+
+@media(max-width:1024px){
+    .BuddyHomeSideBarSubContainerIcon{
+        font-size: 20px;
+        color: rgb(99, 96, 96);
+        margin-left: 28px;
+    }
+    
+    .BuddyHomeSideBarSubContainerDesc{
+        font-size: 14px;
+        margin-left: 8px;
+        color: rgb(99, 96, 96);
+        margin-left: 28px;
+    }
+}
+@media(max-width:820px){
+    .BuddyHomeSideBarSubContainerIcon{
+        font-size: 24px;
+        color: rgb(99, 96, 96);
+        margin-left: 25px;
+    }
+    
+    .BuddyHomeSideBarSubContainerDesc{
+        font-size: 16px;
+        margin-left: 8px;
+        color: rgb(99, 96, 96);
+        margin-left: 25px;
+    }
+}
+

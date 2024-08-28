@@ -1,0 +1,381 @@
+.anoop19 .side1-6 {
+  display: none;
+}
+.anoop19 {
+  /* background-color: rgb(244, 177, 89); */
+  display: flex;
+  flex-direction: column;
+}
+.anoop19 .scroll {
+  width: 2%;
+  /* background-color: aqua; */
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 85%;
+}
+.anoop19 .arrow {
+  margin: 40px;
+  position: absolute;
+  width: 15%;
+  /* background-color: antiquewhite; */
+  margin-top: 5%;
+  margin-left: 85%;
+}
+
+.anoop19 .header4 .fa-solid {
+  position: absolute;
+  background-color: rgba(184, 184, 184, 0.264);
+  padding: 10px 15px 10px 15px;
+  border-radius: 50%;
+  color: white;
+  margin: 5%;
+}
+
+.anoop19 .image6 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.anoop19 .image6 h3,
+h2 {
+  font-family: Aldrich;
+  /* background-color: antiquewhite; */
+}
+.anoop19 .img4 {
+  width: 100%;
+}
+.anoop19 .botImg img {
+  width: 130px;
+}
+.anoop19 .botImg {
+  width: 100%;
+
+  /* background-color: rgba(240, 255, 255, 0.188); */
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 25px;
+  margin-top: -188px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(108, 0, 144, 0),
+    rgba(113, 0, 115, 0.245),
+    rgba(120, 0, 124, 0.522)
+  );
+}
+/* .botImg h3 {
+  color: white;
+} */
+.anoop19 .botImg h3 {
+  color: white;
+  font-weight: 100;
+}
+.anoop19 .name12 {
+  display: flex;
+  /* background-color: aliceblue; */
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+.anoop19 .context4 {
+  /* background-color: rgb(162, 185, 114); */
+  width: 100%;
+  /* display: flex; */
+  /* background-color: white; */
+  /* width: 100%; */
+  /* overflow: hidden; */
+  /* overflow-x: scroll; */
+
+  /* border-radius: 20px; */
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: -20px;
+  height: 40vh;
+  overflow-y: scroll;
+  padding-top: 1px;
+}
+.anoop19 .context4 div {
+  width: 44vh;
+}
+.anoop19 .swap div {
+  /* border: 2px solid black; */
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.anoop19 .links {
+  margin-top: -20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 15px 0px 35px 0px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}
+.anoop19 .links2 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  background-color: rgb(234, 186, 246);
+  /* padding: 8px; */
+  width: 93%;
+  border-radius: 20px;
+  padding: 6px 0px 5px 0px;
+}
+.anoop19 .links2 a:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+#ou {
+  padding: 6px 40px 6px 40px;
+  border-radius: 10px;
+  /* margin-left: -10%; */
+  font-family: Aldrich;
+  text-decoration: none;
+}
+#ther {
+  /* background-color: rgb(79, 63, 42); */
+  padding: 6px 30px 6px 30px;
+  border-radius: 10px;
+  font-family: Aldrich;
+  text-decoration: none;
+}
+.anoop19 .swap {
+  display: flex;
+  overflow: hidden;
+  /* overflow-x: scroll; */
+}
+.anoop19 .swap .s1 {
+  padding-top: 20px;
+  position: relative;
+  width: 100%;
+  /* background-color: rgb(240, 225, 206); */
+}
+.anoop19 .swap .s2 {
+  padding-top: 20px;
+  /* background-color: rgb(93, 79, 60); */
+  width: 100%;
+}
+
+/* .anoop19 .context4 div {
+  border: 1px solid rgb(58, 57, 51);
+
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+} */
+
+.anoop19 .context4 h3 {
+  /* border: 2px solid rgb(117, 114, 114); */
+  /* padding: 5px; */
+  border-radius: 10px;
+  width: 70%;
+  font-family: Aldrich;
+  font-weight: 100;
+}
+.anoop19 .context4 h2 {
+  color: rgb(189, 189, 189);
+}
+.anoop19 .context4 .ab {
+  border: none;
+}
+
+.anoop19 .components {
+  left: 9%;
+  background-color: white;
+  /* position: absolute; */
+  /* position: sticky; */
+  position: fixed;
+  bottom: 10px;
+
+  display: flex;
+  gap: 20px;
+  width: 80%;
+  /* height: 10%; */
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  /* padding-left: 20px; */
+  padding: 10px;
+  box-shadow: 2px 2px 20px rgb(255, 198, 217);
+  /* margin-top: 170%; */
+}
+.anoop19 .img122 {
+  width: 18%;
+}
+.anoop19 .msg12 {
+  width: 19%;
+}
+
+@media screen and (min-width: 1030px) {
+  .anoop19 {
+    /* background-color: antiquewhite; */
+    padding-bottom: 50px;
+  }
+  .anoop19 footer {
+    position: absolute;
+    position: sticky;
+    width: 800px;
+    background-color: aqua;
+    bottom: 30px;
+  }
+  .anoop19 ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .anoop19 ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .anoop19 ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  .anoop19 .links2 a:hover {
+    background-color: aliceblue;
+  }
+
+  /* #ou {
+    background-color: red;
+    background-color: antiquewhite;
+  } */
+
+  .anoop19 .swap div {
+    display: flex;
+    /* border: 2px solid black; */
+    width: 30%;
+  }
+  .anoop19 .swap .s1 {
+    /* background-color: aqua; */
+    width: 100%;
+    /* width: 900vh; */
+  }
+  .anoop19 .swap .s2 {
+    /* background-color: rgb(25, 82, 82); */
+    width: 100%;
+  }
+  .anoop19 .links2 {
+    background-color: rgb(231, 173, 236);
+    width: 30%;
+    margin-left: 15%;
+  }
+
+  .anoop19 .side1-6 h1 {
+    position: absolute;
+    margin-top: -45%;
+    font-family: Aldrich;
+    margin-left: -5%;
+  }
+  .anoop19 .side1-6 {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 12px rgb(187, 186, 186);
+    width: 240px;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-top: 10%;
+    gap: 40px;
+  }
+  .anoop19 .side1-6 h3 {
+    font-family: Aldrich;
+    font-size: 16px;
+  }
+  .anoop19 .side1-6 .fa-solid,
+  .fa-brands {
+    font-size: 130%;
+    width: 30px;
+  }
+  .anoop19 .pro1-6 {
+    margin-top: 110%;
+  }
+  .anoop19 .header4 .fa-solid {
+    display: none;
+  }
+  .anoop19 .scroll {
+    width: 0.5%;
+    /* background-color: aqua; */
+
+    position: absolute;
+    padding-top: 250px;
+    margin-left: 30%;
+  }
+  .anoop19 .arrow {
+    width: 5%;
+    margin-top: 1%;
+    margin-left: 32%;
+  }
+  .anoop19 .components {
+    width: 35%;
+    margin: auto 30.5%;
+    border-radius: 50px;
+    gap: 10%;
+    padding: 1% 2% 1% 2%;
+  }
+  .anoop19 .header4 {
+    padding-top: 20px;
+    padding-left: 14%;
+    width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .anoop19 .image6 {
+    width: 42%;
+    /* box-shadow: 3px 1px 12px rgb(179, 177, 177); */
+  }
+  .anoop19 .context4 {
+    /* height: 1000px; */
+    margin-left: 29%;
+    padding-top: 50px;
+    width: 56%;
+    height: 660px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* background-color: rgb(80, 39, 39); */
+    /* padding-left: 9%; */
+    box-shadow: 1px 1px 12px rgb(212, 210, 210);
+  }
+  .anoop19 .context4 div {
+    width: 100vh;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .anoop19 .context4 h3 {
+    box-sizing: border-box;
+    width: fit-content;
+  }
+  .anoop19 .scroll {
+    margin-top: 10px;
+  }
+  .anoop19 .p3 {
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -8%;
+    border-radius: 10px;
+    background-color: rgb(200, 198, 198);
+  }
+  .anoop19 .img122 {
+    width: 12%;
+  }
+  .anoop19 .msg12 {
+    width: 13%;
+  }
+}

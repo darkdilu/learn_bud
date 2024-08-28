@@ -1,0 +1,207 @@
+.anoop1 .page1 {
+  display: flex;
+}
+
+.anoop1 .H123 {
+  width: 400px;
+  height: 170px;
+  position: relative;
+  background-color: rgb(126, 81, 81);
+  /* width: 300px; */
+  margin-right: 280px;
+  /* margin-top: -200px; */
+  border-top-right-radius: 70px;
+  /* border-top-right-radius: 70px; */
+  /* border-bottom-left-radius: 70px; */
+  border-bottom-right-radius: 70px;
+  border-bottom-left-radius: 50px;
+}
+
+.anoop1 .pageH1 {
+  background-color: rgb(255, 255, 255);
+  /* margin-left: 0px; */
+  width: 740px;
+  /* position: absolute; */
+  font-size: 70px;
+  /* margin-top: -420px; */
+  margin-left: 10px;
+  /* width: 370px; */
+  /* margin-left: 10px; */
+  font-family: Aldrich;
+  font-weight: normal;
+  /* margin-left: 90%; */
+  /* animation: 1px 50px; */
+  color: rgb(73, 73, 73);
+  /* background-color: antiquewhite; */
+}
+
+.anoop1 .pageImg1 {
+  width: 45%;
+  margin-top: 50px;
+  margin-left: 60px;
+  /* background-color: aqua; */
+}
+
+.anoop1 .pageBtn {
+  /* border: 1px solid black; */
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10%; */
+  /* align-items: start; */
+  justify-content: space-around;
+  /* margin-left: 60px; */
+  /* background-color: antiquewhite; */
+}
+.anoop1 .spa {
+  /* padding-left: 50px; */
+  box-shadow: none;
+  /* box-sizing: border-box; */
+  padding: 0px 5px 0px 5px;
+  color: white;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+.anoop1 .button1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+.anoop1 .frontbtn {
+  background-color: rgba(75, 22, 76, 1);
+  color: white;
+  border: none;
+  font-family: Aldrich;
+  font-size: 16px;
+}
+.anoop1 .f12 {
+  background-color: rgba(75, 22, 76, 1);
+  width: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding-right: 60px;
+}
+.anoop1 .f13 {
+  background-color: rgb(252, 219, 253);
+  width: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding-right: 60px;
+}
+.anoop1 .img13 {
+  width: 30px;
+  border-radius: 50%;
+}
+.anoop1 .frontbtn1 {
+  background-color: rgb(252, 219, 253);
+
+  color: rgb(2, 2, 2);
+  border: none;
+  font-family: Aldrich;
+  font-size: 16px;
+}
+.anoop1 .pageBtn .fa-solid {
+  /* position: absolute; */
+  /* margin-left: 30px; */
+  /* margin-top: 6px; */
+  padding: 8px;
+  /* margin-right: 250px; */
+  box-shadow: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.anoop1 .call {
+  /* margin-right: 20px; */
+}
+
+.anoop1 .p12 {
+  background-color: white;
+  /* margin-right: 30px; */
+  /* color: rgb(192, 43, 226); */
+}
+
+.anoop1.a1 {
+  color: rgb(218, 110, 207);
+}
+
+@media screen and (max-width: 1000px) {
+  .anoop1 .page1 {
+    width: 99%;
+    /* background-color: antiquewhite; */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+    margin-top: -25px;
+    /* margin-bottom: -80px; */
+  }
+  .anoop1 .pageImg1 {
+    width: 86%;
+    margin-left: 30px;
+    /* background-color: aliceblue; */
+    margin-top: 100px;
+  }
+
+  .anoop1 .pageBtn {
+    /* background-color: antiquewhite; */
+    margin-top: 30px;
+    width: 90%;
+    /* height: 100px; */
+    /* background-color: rgb(153, 123, 84); */
+    align-items: center;
+    /* position: absolute; */
+  }
+  .anoop1 .pageH1 {
+    width: fit-content;
+    /* width: 85%; */
+    font-size: 180%;
+    font-family: Aldrich;
+    /* margin-left: 50px; */
+    /* margin-left: -19px; */
+  }
+  .anoop1 .spa {
+    padding: 0;
+    font-size: 0;
+  }
+  .anoop1 .button1 {
+    /* background-color: aqua; */
+    padding-top: 20px;
+  }
+  .anoop1 .frontbtn {
+    /* width: 110%; */
+    font-family: Aldrich;
+    /* margin-left: 20px; */
+  }
+  .anoop1 .frontbtn1 {
+    /* width: 110%; */
+    font-family: Aldrich;
+    /* margin-left: 20px; */
+  }
+  .anoop1 .f12 {
+    width: 110%;
+  }
+  .anoop1 .f13 {
+    width: 110%;
+  }
+  /* .button1 .fa-solid {
+    margin-left: 10%;
+  }
+  .img13 {
+    margin-left: 10%;
+  } */
+  .anoop1 .p12 {
+    /* margin-right: 10px; */
+  }
+}

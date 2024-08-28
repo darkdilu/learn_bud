@@ -1,0 +1,107 @@
+.anoop10 .look {
+  width: 400px;
+  /* background-color: antiquewhite; */
+  margin: auto;
+  /* margin-top: 100px; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 3px 3px 7px rgb(196, 195, 195);
+  background-color: white;
+}
+.anoop10 {
+  background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+  background-position: 0px 40px;
+  background-size: cover;
+  height: 700px;
+  padding-top: 10%;
+}
+
+.anoop10 .look input {
+  width: 50px;
+  height: 16px;
+}
+.anoop10 .look span {
+  display: flex;
+  align-items: center;
+}
+
+.anoop10 .check12 {
+  /* background-color: aqua; */
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.anoop10 .look button {
+  margin-top: 20px;
+  width: 260px;
+  background-color: rgb(40, 39, 39);
+  color: aliceblue;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/* ///////////////////////////////// */
+.anoop11 {
+  background-image: url("../../src/assets/Authentication/Backround1.jpeg");
+  height: 700px;
+  background-position: 0px 40px;
+  background-size: cover;
+  padding-top: 10%;
+}
+.anoop11 .intrest2 {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 3px 3px 7px gray;
+  /* margin-top: 100px; */
+  background-color: white;
+}
+.anoop11 .intrest2 button {
+  margin-top: 20px;
+  width: 260px;
+  background-color: rgb(40, 39, 39);
+  color: aliceblue;
+  height: 30px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .anoop10 {
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 700px;
+    background-size: cover;
+    background-position: 0px -70px;
+    /* margin-top: 10%; */
+    padding-top: 20%;
+  }
+  .anoop10 .look {
+    width: 280px;
+    box-shadow: 1px 1px 6px rgb(183, 182, 182);
+  }
+  .anoop11 {
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 700px;
+    background-size: cover;
+    background-position: 0px -70px;
+    /* margin-top: 10%; */
+    padding-top: 20%;
+  }
+  .anoop11 .intrest2 {
+    width: 260px;
+    box-shadow: 1px 1px 6px rgb(187, 187, 187);
+  }
+  .anoop11 .intrest2 button {
+    width: 210px;
+    background-color: rgb(42, 42, 43);
+  }
+}

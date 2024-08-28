@@ -1,0 +1,153 @@
+.anoop21 .side1-6 {
+  margin-top: -40px;
+}
+.anoop21 .nav22-1 {
+  margin: 10px 0px;
+  font-size: 30px;
+  /* padding-bottom: 20px; */
+}
+
+.anoop21 .pay22-1 h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(120, 61, 110);
+  padding-bottom: 20px;
+  margin: auto;
+}
+.anoop21 .p44 {
+  margin-left: 20px;
+  font-size: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.anoop21 .pay22-1 .p34 {
+  font-size: 15px;
+  width: 320px;
+  background-color: rgb(255, 255, 255);
+  margin-left: -10px;
+}
+.anoop21 .pay22-1 input {
+  height: 30px;
+  width: 97%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 0;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+}
+.anoop21 .btn22-1 {
+  background-color: #560758;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  gap: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.anoop21 .pay22-1 {
+  /* margin-top: 60px; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 25px;
+  padding: 25px;
+}
+
+.anoop21 .flex1 {
+  display: flex;
+  gap: -5px;
+  padding-bottom: 40px;
+}
+.anoop21 .anoop21 .flex1 input {
+  width: 140px;
+}
+
+.anoop21 .btn44 {
+  margin-left: 5%;
+  width: 90%;
+  background-color: #560758;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.anoop21 .image22-1 {
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+  padding-bottom: 20px;
+}
+.anoop21 .side1-8 {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (min-width: 700px) {
+  .anoop21 .side1-8 h1 {
+    position: absolute;
+    margin-top: -40%;
+    font-family: Aldrich;
+    left: 10%;
+  }
+
+  .anoop21 .side1-8 {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 2px 12px rgb(187, 186, 186);
+    width: 240px;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-top: 10%;
+    gap: 40px;
+    margin-top: -2%;
+  }
+  .anoop21 .side1-8 h3 {
+    font-family: Aldrich;
+    font-size: 16px;
+  }
+  .anoop21 .side1-8 .fa-solid,
+  .fa-brands {
+    font-size: 130%;
+    width: 30px;
+  }
+  .anoop21 .pro1-8 {
+    margin-top: 110%;
+  }
+  .anoop21 .pay22-1 {
+    margin: auto;
+    margin-left: 40%;
+    margin-top: 30px;
+    width: 450px;
+
+    /* background-color: antiquewhite; */
+    box-shadow: 2px 2px 7px rgb(187, 185, 185);
+  }
+  .anoop21 .flex1 {
+    gap: 20px;
+  }
+  .anoop21 .image22-1 {
+    /* padding-left: 40px; */
+    margin: auto;
+    /* background-color: antiquewhite; */
+    padding: 0;
+    gap: 20px;
+  }
+  .anoop21 .p44 {
+    padding-left: 0px;
+    margin: auto;
+    font-size: 12px;
+  }
+  .anoop21 .pay22-1 .p34 {
+    width: 410px;
+    /* background-color: antiquewhite; */
+  }
+  .anoop21 .pay22-1 .btn44 {
+    margin-top: 20px;
+  }
+}

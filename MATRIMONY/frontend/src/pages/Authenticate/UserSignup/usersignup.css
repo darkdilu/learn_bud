@@ -1,0 +1,168 @@
+.anoop3 {
+  background-image: url("src/assets/Authentication/Backround1.jpeg");
+  height: 740px;
+  background-position: 0px 40px;
+  padding-top: 6%;
+  background-size: cover;
+}
+.link-button {
+  background: none;
+  color: rgb(152, 18, 188);
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: rgb(126, 13, 154);
+}
+
+.anoop3 .data input {
+  width: 250px;
+  border: 2px solid rgb(207, 203, 203);
+  height: 30px;
+  border-radius: 5px;
+}
+
+.anoop3 .data {
+  width: 350px;
+
+  border-radius: 20px;
+  text-align: center;
+  margin: auto;
+  /* margin-top: 100px; */
+
+  padding-top: 20px;
+
+  box-shadow: 3px 3px 7px rgb(201, 199, 199);
+  background-color: white;
+}
+.anoop3 .data h3 {
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  color: #212323;
+
+  margin: auto;
+}
+
+.Otp{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.anoop3 .insert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 250px;
+  margin: auto;
+  text-align: start;
+}
+
+.anoop3 .footer22 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  gap: 10px;
+}
+.anoop3 .footer22 .fa-solid {
+  box-shadow: 0px 0px 0px;
+  padding: 0;
+  font-style: normal;
+  padding-left: 10px;
+  color: rgb(96, 96, 96);
+  position: relative;
+  background-color: white;
+}
+.anoop3 .footer22 .fa-regular {
+  padding-left: 10px;
+  color: #212323;
+}
+.anoop3 .up {
+  width: 255px;
+  height: 35px;
+
+  background-color: #212323; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.anoop3 .up2 {
+  width: 255px;
+  height: 35px;
+
+  background-color: rgba(75, 22, 76, 1); /* Green */
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(254, 254, 254);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.anoop3 .p3 {
+  background-color: white;
+}
+.anoop3 .verify {
+  width: 100px;
+  display: flex;
+  gap: 10px;
+}
+.anoop3 .v {
+  padding: 0 20px 0 20px;
+  width: 100px;
+  background-color: rgba(75, 22, 76, 1);
+}
+.anoop3 .v1 {
+  padding: 0 15px 0 15px;
+  width: 200px;
+  background-color: #252329;
+}
+
+.anoop3 .otp {
+  margin-top: 20px;
+  width: 100px;
+  display: flex;
+  gap: 10px;
+  margin-left: -10px;
+}
+@media screen and (max-width: 900px) {
+  .anoop3 .data {
+    width: 290px;
+
+    position: relative;
+    /* margin-top: 40px; */
+  }
+  .anoop3 img {
+    width: 100%;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+  .anoop3 {
+    margin: auto;
+    margin-top: 10%;
+    width: 100%;
+    background-image: url("../../src/assets/Authentication/Backround2.jpeg");
+    height: 750px;
+    background-size: cover;
+    background-position: -0px -40px;
+    /* margin-top: 10%; */
+    padding-top: 15%;
+    padding-bottom: 28%;
+  }
+}

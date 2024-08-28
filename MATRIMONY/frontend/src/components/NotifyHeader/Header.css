@@ -1,0 +1,69 @@
+/* src/components/Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #4B164C;
+  position: relative;
+}
+
+.search {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  font-size:25px;
+  margin-left: 10px;
+
+}
+
+.title-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the title */
+}
+
+.title {
+  color: #fff;
+  font-size: 24px; /* Adjust font size as needed */
+}
+
+.profile-pic-container {
+
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Responsive adjustments for screens with a width of 475px */
+@media (max-width: 475px) {
+
+  .search {
+    font-size: 24px;
+    padding: 8px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+
+/* Responsive adjustments for screens with a width of 375px */
+@media (max-width: 375px) {
+ 
+  .search {
+    font-size: 22px;
+    padding: 6px;
+  }
+  .title {
+    font-size: 18px;
+  }
+}
